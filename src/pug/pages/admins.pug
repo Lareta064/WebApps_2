@@ -44,5 +44,26 @@ block content
 
 			+pagination
 
+	//================= ADD ADMIN ==================
+	.modal-frame-wrapper.visible(frame-modal="add-admin")
+		.modal-frame
+			.icon-close(frame-close)
+			.title Администратор
+			.modal-frame__body
+				form.add-admin(action="")
+					.form-item
+						label.label ФИО
+						input(type="text" placeholder="Иванов Иван Иванович" name="name")
+					
+					.form-item
+						label.label Email*
+						input(type="email" placeholder="example@mail.ru" name="email")
+					
+					.form-item
+						label.label Номер телефона
+						input(type="email" placeholder="+7 (999) 999 99 99" name="phone")
+					
+					.person-role							
+
 block variables
 	-var title = "Администраторы";

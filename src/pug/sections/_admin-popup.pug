@@ -1,0 +1,14 @@
+//================= ADD ADMIN ==================
+.modal-frame-wrapper.visible(frame-modal="add-admin")
+	.modal-frame
+		.icon-close(frame-close)
+		.title Администратор
+		.modal-frame__body
+			form.add-admin(action="")
+				.form-item
+					label.label ФИО
+					input(type="text" placeholder="Иванов Иван Иванович" name="name")
+				
+				.form-item
+					label.label Email*
+					input(type="email" placeholder="example@mail.ru" name="email")
