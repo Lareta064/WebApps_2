@@ -1,0 +1,30 @@
+@import "../base/var.scss";
+.id-card{
+	&>*+*{margin-top: remy(10);}
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid $lightBorder;;
+	position: relative;
+	padding-right: 16px;
+	
+	&__state{
+		position: absolute;
+		top: remy(18);
+		right: 16px;
+		font-size: remy(14);
+		letter-spacing: 0.014px;
+		color: rgba(51, 51, 51, 0.60);
+		.online-state{margin-top: remy(3);}
+	}
+	.title-small{
+		padding-right: remy(3);
+		margin-top: 0;
+	}
+	.title-small ~ *{color:rgba(51, 51, 51, 0.40); }
+	.id-card__place{
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: remy(305);
+	}
+}

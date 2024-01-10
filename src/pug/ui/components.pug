@@ -1,0 +1,136 @@
+include ../layouts/_mixins-links.pug
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+		//====убрать синий цвет у ссылок в сафари ========
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet", href="../css/main.css")
+		title UI-KIT
+
+	body.body-dashboard
+
+		include ui-navigation.pug
+
+		block content
+			.container-dashboard
+				h2 Компоненты меню
+
+				.container-dashboard__content
+					ul.ui-components
+						li
+							.filters-group
+								+search-block('', '','','', 'Поиск...')
+				
+								+custom-drop('Сортировать', ['Сортировать', 'от А-Я', 'от Я-А','по увеличению %','по уменьшению %' ])(class="drop-filter--sort")
+							pre.
+								.filters-group
+									+search-block('', '','','', 'Поиск...')
+				
+									+custom-drop('Сортировать', ['Сортировать', 'от А-Я', 'от Я-А','по увеличению %','по уменьшению %' ])(class="drop-filter--sort")								
+						
+						hr
+						li(style="max-width: 310px")
+							.viewer-state
+								.viewer-state__views 1024
+								.viewer-state__replay 1024
+							pre.
+								.viewer-state
+									.viewer-state__views 1024
+									.viewer-state__replay 1024
+
+						hr
+						li
+							.payment-table
+								.payment-table__row.payment-table__header
+									.cell-date Дата
+									.cell-payer От кого
+									.cell-name Название заказа
+									.cell-summ Сумма
+								
+								.payment-table__row
+									.cell-date 08.08.23
+									.cell-payer ZakachikName
+									.cell-name Название заказа
+									.cell-summ 80 000 ₽
+
+								.payment-table__row
+									.cell-date 08.08.23
+									.cell-payer ZakachikName
+									.cell-name Название заказа
+									.cell-summ 80 000 ₽
+						hr
+						li
+							.tabs
+								.tabs-menu
+									nav
+										button.tabs-menu__item.active(tab-btn="1") Назначенные
+											span.span-num 3
+										button.tabs-menu__item(tab-btn="2") Ожидающие
+											span.span-num.disable 3
+										
+							pre.
+								.tabs
+									.tabs-menu
+										nav
+											button.tabs-menu__item.active(tab-btn="1") Назначенные
+												span.span-num 3
+											button.tabs-menu__item(tab-btn="2") Ожидающие
+												span.span-num.disable 3
+
+						hr
+						li
+							.dotter-list
+								+dotter-li('Кол-во выполненных заказов:', '41')
+								+dotter-li('Всего заработано:', '804 674 ₽')
+								+dotter-li('Средний заработок (мес.):', '68 674 ₽')
+							pre.
+								+dotter-li('Кол-во выполненных заказов:', '41')
+								+dotter-li('Всего заработано:', '804 674 ₽')
+								+dotter-li('Средний заработок (мес.):', '68 674 ₽')
+						
+						hr
+						li
+							h3(style="margin-bottom: 1rem; font-weight: 700") chat list contacts
+							
+							.chat-contacts
+								+chat-contact-item('','', 'true')
+								+chat-contact-item('true','true')
+								+chat-contact-item('true','true')
+								+chat-contact-item('true','true')
+							pre.
+								.chat-contacts
+									+chat-contact-item('','', 'true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('true','true')
+							
+							hr
+							li
+								h3(style="margin-bottom: 1rem; font-weight: 700") chat-window
+								.chat-window__messages
+									.chat-window__message
+										p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit.
+										.chat-time
+											.chat-icon
+												.db-check
+											p 16:27
+									.chat-window__message
+										p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit.
+										.chat-time
+											.chat-icon
+												.db-check
+											p 16:27
+									
+									.chat-window__responce
+										p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in
+										.chat-time
+											.chat-icon
+												.db-check
+											p 16:27
+							

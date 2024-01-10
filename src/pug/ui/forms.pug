@@ -1,0 +1,126 @@
+include ../layouts/_mixins-links.pug
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+		//====убрать синий цвет у ссылок в сафари ========
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet", href="../css/main.css")
+		
+		title UI-KIT
+
+	body.body-dashboard
+
+		include ui-navigation.pug
+
+		block content
+			.container-dashboard
+				h2 Форма
+
+				.container-dashboard__content
+					h2 ЭЛЕМЕНТЫ ФОРМЫ
+
+					.container-dashboard__content
+						ul.ui-components
+							li
+								+custom-drop('', ['Самарская область', 'Саратовская область','Сахалинская область'], 'search-btn')(class=" custom-drop--relative")
+								pre.
+									+custom-drop('', ['Самарская область', 'Саратовская область','Сахалинская область'], 'search-btn')(class=" custom-drop--relative")
+								p Миксин получает три аргумента:
+								ol
+									li значение инпута по умолчанию
+									li массив выпадающего списка
+									li класс для кнопки, если ничего не передать в этот параметр, выводится галочка вниз
+								p если выпадающий список толкает вниз контент, при открытии, тогда добавляется класс 'custom-drop--relative'
+							hr
+							li
+								.form-item
+									label.label Дата и время начала
+									.form-item__row
+										input(type="text" )
+										input(type="text")
+
+								pre.
+									.form-item
+										label.label Дата и время начала
+										.form-item__row
+											input(type="text")
+											input(type="text" )
+							hr
+							li
+								.form-item
+									label.label Дата и время начала
+									.form-item__row
+										input.error(type="text" )
+										textarea.error(type="text"   placeholder="Нет информации")
+
+								pre.
+									.form-item
+										label.label Дата и время начала
+										.form-item__row
+										input.error(type="text" )
+										textarea.error(type="text"   placeholder="Нет информации")						
+							
+							
+							
+							hr
+
+							li
+								.progress-card
+									.progress-card__bar
+										img(src="../img/progress.webp", width="44" alt="img")
+									
+									.progress-card__info
+										.progress-card__title Иванов Иван Иванович
+										p Сварщик 5 разряда
+								pre.
+									+progress-card
+							hr
+							li
+								.progress-card
+									.progress-card__bar
+										img(src="../img/progress.webp", width="44" alt="img")
+									
+									.progress-card__info
+										.progress-card__title Иванов Иван Иванович
+										p Сварщик 5 разряда
+								pre.
+									+progress-card
+							hr
+							li
+								+progress-card-input
+								pre.
+									+progress-card-input
+
+
+		script.
+			/*===================DROP FILTER====================*/
+			const dropFilters = document.querySelectorAll('.custom-drop');
+			if (dropFilters.length > 0){
+				for (let item of dropFilters){
+					const itemSelect = item.querySelector('.custom-drop__val');
+					const itemDrop = item.querySelector('.custom-drop__list');
+					// const itemDropItems = item.querySelectorAll('.drop-filter__item');
+
+					item.addEventListener('click', function(e){
+						
+					if(this.classList.contains('active')){
+						this.classList.remove('active');
+					}else{
+						this.classList.add('active');
+					}
+					});
+					/********click Drop item******* */
+					itemDrop.addEventListener('click', function (e) {
+						e.stopPropagation();
+						const selectItemText = e.target.textContent;
+						itemSelect.querySelector('input').setAttribute('value',selectItemText );
+						item.classList.remove('active');
+					});
+				}
+			}

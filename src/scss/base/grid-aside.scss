@@ -1,0 +1,32 @@
+@import "var.scss";
+/**********сетка с сайдбаром справа как на стр Аналитика***************/
+.aside-grid{
+	display: flex;
+	column-gap: remy(24);
+	width: 100%;
+	@media (max-width: remy(1199)) {
+		display: block;
+		
+	}
+}
+.aside-grid__content{
+	flex-grow:1;
+	
+	&>*{height: 100%;}
+	@media(max-width:remy(1199)) {
+		&>* {
+				height: auto;
+			}
+		margin-top: remy(24)
+	}
+}
+.aside-grid__sidebar{
+	width: remy(410);
+	
+	flex-shrink:0;
+	@media (max-width: remy(1199)) {
+		width: 100%;
+
+	}
+}
+.aside-grid__sidebar>*+*{margin-top: remy(24)}

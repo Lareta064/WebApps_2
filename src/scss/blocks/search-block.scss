@@ -1,0 +1,40 @@
+@import "../base/var.scss";
+/*********SEARCH BLOCK**********/
+.search-btn {
+	display: inline-block;
+	width: remy(40);
+	height: remy(40);
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19' fill='none'%3e%3cpath d='M8.70833 15.0417C12.2061 15.0417 15.0417 12.2061 15.0417 8.70833C15.0417 5.21053 12.2061 2.375 8.70833 2.375C5.21053 2.375 2.375 5.21053 2.375 8.70833C2.375 12.2061 5.21053 15.0417 8.70833 15.0417Z' stroke='%23272727' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M16.6254 16.6249L13.1816 13.1812' stroke='%23272727' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+	background-size: remy(19);
+	
+}
+
+.search-block {
+	input {
+		padding-right: remy(50);
+	}
+
+	.search-btn {
+		display: inline-block;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 2;
+		transition: .3s;
+		background-color: #f3f3f3;
+		width: remy(40);
+		height: remy(40);
+
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+	.custom-drop__val{
+		box-shadow: none;
+	}
+	@media(min-width:remy(1200)) {
+		max-width: remy(560);
+	}
+}

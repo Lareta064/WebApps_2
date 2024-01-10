@@ -1,0 +1,48 @@
+extends ../layouts/layout.pug
+
+block content
+	+header([
+		{name: 'Приборная панель', link: 'dashboard.html'},
+		{name: 'Администраторы', link: 'admins.html', active:'true'},
+		{name: 'Заказы',link: 'orders.html'},
+		{name: 'Аналитика',link: 'analytics.html'},
+		{name: 'Связь', link: 'connection.html'},
+		{name: 'Техподдержка', link:'support.html'}
+	])
+
+	main.admins
+		.container
+			//====панель с фильтрами ========
+			.filters-group.filters-group--admins
+				+search-block('', '','','', 'Поиск...')
+				+custom-drop('Сортировать', ['Сортировать', 'от А-Я', 'от Я-А'])(class="drop-filter--sort")
+				
+				.admins-btn
+					button.btn Добавить Администратора
+			//====контент с карточками ========
+			
+			.persone-block.column-four
+				a(href="#!")
+					+id-card('','','Самарская обл., Московская обл., Ленинградская обл.')
+				a(href="#!")
+					+id-card('44 мин','','Самарская обл., Московская обл., Ленинградская обл.')
+				a(href="#!")
+					+id-card('12 мин','','Самарская обл., Московская обл., Ленинградская обл.')
+				a(href="#!")
+					+id-card('','','Самарская обл., Московская обл., Ленинградская обл.')
+				a(href="#!")
+					+id-card('','','Самарская обл., Московская обл., Ленинградская обл.')
+				a(href="#!")
+					+id-card('','','Самарская обл., Московская обл., Ленинградская обл.')
+				a(href="#!")
+					+id-card('','','Самарская обл., Московская обл., Ленинградская обл.')
+				a(href="#!")
+					+id-card('','','Самарская обл., Московская обл., Ленинградская обл.')
+				a(href="#!")
+					+id-card('','','Самарская обл., Московская обл., Ленинградская обл.')
+				
+
+			+pagination
+
+block variables
+	-var title = "Администраторы";

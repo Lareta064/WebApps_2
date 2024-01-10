@@ -1,0 +1,18 @@
+//======= Карточка Заказчика =====
+.person-card
+	.person-card-preview.border-shadow
+		.person-card__photo
+			img(src="./img/person.webp", width="148" height="148" alt="img")
+		.person-card__title
+			.title Иванов Иван Иванович #[span.person-card__time 12 мин.]
+			.title-small Заказчик
+	
+	.person-card-more.border-shadow
+		.title Подробная информация:
+		ul.dotter-list
+			+dotter-li('telegram_chat_id', '433134')
+			+dotter-li('Тип доступа:', 'Тип 1')
+			+dotter-li('Номер телефона:', '+7 (999) 999-99-99')
+			+dotter-li('Статус:', 'Статус 1')
+			+dotter-li('Email:', 'example@mail.ru')
+			+dotter-li('Дата присоединения:', '08.08.23')

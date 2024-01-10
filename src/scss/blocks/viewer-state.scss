@@ -1,0 +1,27 @@
+@import "../base/var.scss";
+/*======блок со статистикой просмотров======*/
+.viewer-state {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.viewer-state__views,
+.viewer-state__replay {
+	position: relative;
+	display: flex;
+	align-items: center;
+	column-gap:remy(8);
+	&::before{
+		content: '';
+		display: block;
+		width: remy(19);
+		height: remy(19);
+	}
+}
+.viewer-state__views:before {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19' fill='none'%3e%3cpath d='M2.5923 12.1089C1.91944 11.2348 1.58301 10.7977 1.58301 9.49984C1.58301 8.202 1.91944 7.76492 2.5923 6.89077C3.93581 5.14532 6.18901 3.1665 9.49967 3.1665C12.8103 3.1665 15.0635 5.14532 16.4071 6.89077C17.0799 7.76492 17.4163 8.202 17.4163 9.49984C17.4163 10.7977 17.0799 11.2348 16.4071 12.1089C15.0635 13.8544 12.8103 15.8332 9.49967 15.8332C6.18901 15.8332 3.93581 13.8544 2.5923 12.1089Z' stroke='%23007AFF' stroke-width='1.2'/%3e%3cpath d='M11.875 9.5C11.875 10.8117 10.8117 11.875 9.5 11.875C8.18832 11.875 7.125 10.8117 7.125 9.5C7.125 8.18832 8.18832 7.125 9.5 7.125C10.8117 7.125 11.875 8.18832 11.875 9.5Z' stroke='%23007AFF' stroke-width='1.2'/%3e%3c/svg%3e");
+}
+
+.viewer-state__replay:before {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19' fill='none'%3e%3cpath d='M8.97428 4.33792L5.82954 7.13323C4.58772 8.23708 3.9668 8.78901 3.9668 9.50003C3.9668 10.2111 4.58771 10.763 5.82954 11.8668L8.97428 14.6621C9.54112 15.166 9.82454 15.4179 10.0582 15.313C10.2919 15.2081 10.2919 14.8289 10.2919 14.0704V12.2143C13.1419 12.2143 16.2294 13.5715 17.4169 15.8334C17.4169 8.59527 13.1947 6.78575 10.2919 6.78575V4.92962C10.2919 4.1712 10.2919 3.792 10.0582 3.68706C9.82454 3.58212 9.54112 3.83406 8.97428 4.33792Z' stroke='%23007AFF' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M6.69839 3.5625L2.5689 7.39703C1.94022 7.9808 1.58301 8.79997 1.58301 9.65788C1.58301 10.5623 1.97981 11.4211 2.66848 12.0073L6.69839 15.4375' stroke='%23007AFF' stroke-width='1.2' stroke-linecap='round'/%3e%3c/svg%3e");
+}

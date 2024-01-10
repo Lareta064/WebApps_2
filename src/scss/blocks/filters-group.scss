@@ -1,0 +1,26 @@
+@import "../base/var.scss";
+.filters-group{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: remy(20);
+	margin-bottom: remy(16);
+	.search-block{
+		flex-grow: 1;
+		&__val input{
+			height: remy(37);
+		}
+	}
+	&__res{
+		flex-shrink: 0;
+		font-weight: 500;
+	}
+	@media(max-width:remy(767)){
+		flex-wrap: wrap;
+		row-gap:1rem;
+		.search-block {width: 100%;}
+	}
+	@media(max-width:remy(399)) {
+		.drop-filter.drop-filter--sort{width: 100%;}
+	}
+}

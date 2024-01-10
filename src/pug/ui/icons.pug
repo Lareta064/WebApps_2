@@ -1,0 +1,103 @@
+include ../layouts/_mixins-links.pug
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+		//====убрать синий цвет у ссылок в сафари ========
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet", href="../css/main.css")
+		title UI-KIT
+
+	body.body-dashboard
+
+		include ui-navigation.pug
+
+		block content
+			.container-dashboard
+				h2 Иконки
+
+				.container-dashboard__content
+					ul
+						li
+							svg.svg-notify
+								use(href="../img/spriteSvg.svg#svg-notify")
+							pre.
+								svg.svg-notify
+									use(href="./img/spriteSvg.svg#svg-notify")
+						hr
+						li
+							svg.svg-chevron
+								use(href="../img/spriteSvg.svg#svg-chevron")
+							pre.
+								svg.svg-chevron
+									use(href="./img/spriteSvg.svg#svg-chevron")
+						hr
+						li
+							.search-btn
+							pre.
+								.search-btn
+						hr
+						li
+							.sort-icon
+							pre.
+								.sort-icon
+						hr
+						li
+							.progress-icon
+							pre.
+								.progress-icon
+						hr
+						li
+							.clock-icon
+							pre.
+								.clock-icon
+						hr
+						li
+							.check-icon
+							pre.
+								.check-icon
+						hr
+						li
+							.db-check
+							pre.
+								.db-check
+						hr
+						li
+							.add-icon
+							pre.
+								.add-icon
+						hr
+						li
+							.mic-icon
+							pre.
+								.mic-icon
+						hr
+						li
+							.send-icon
+							pre.
+								.send-icon
+						hr
+						li
+							.eye-icon
+							pre.
+								.eye-icon
+						hr
+						li
+							.back-icon
+							pre.
+								.back-icon
+						hr
+						li
+							.repost-icon
+							pre.
+								.repost-icon
+						hr
+						li
+							.pin-icon
+							pre.
+								.pin-icon

@@ -1,0 +1,41 @@
+@import "../base/var.scss";
+/***********стр Уведомления Настройка*******************/
+.notification-settings {
+	margin-top: 1.5rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+    @media (max-width: remy(1023)) {
+		grid-template-columns: 1fr;
+	}
+	.settings-auto__list li {
+		display: flex;
+		align-items: center;
+		column-gap: remy(20);
+		margin-bottom: remy(10);
+		@media (max-width: remy(574)) {
+			flex-direction: column;
+			align-items: flex-start;
+			row-gap:remy(8);
+			margin-bottom: remy(16);
+			.link{margin-left: 24px;}
+		}
+	}
+}
+
+.settings-manual__title {
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	@media (max-width: remy(574)) {
+		flex-direction: column;
+		align-items: flex-start;
+		row-gap: remy(8);
+		margin-bottom: remy(16);
+
+	}
+	.title-medium {
+		margin-bottom: 0;
+	}
+}

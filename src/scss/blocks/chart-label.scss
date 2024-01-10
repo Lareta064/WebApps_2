@@ -1,0 +1,29 @@
+@import "../base/var.scss";
+.chart-label{
+	position: relative;
+	padding: remy(12);
+	max-width: remy(230);
+	font-family: 'sf pro display';
+	letter-spacing: 0.02em;
+	width: fit-content;
+	background-color: $white;
+	box-shadow: (2px 2px 4px rgba(0, 0, 0, 0.05)),(-2px -2px 4px rgba(0, 0, 0, 0.05));
+	span{color: rgba(51, 51, 51, 0.40); display: block; margin-top: 6px; white-space: nowrap;}
+	position: absolute;
+	top: 20%;
+	left: 27%;
+	z-index: 2;
+}
+.chart-label:after{
+	content: '';
+	width: 20px;
+	height: 20px;
+	display: block;
+	background-image: url(../img/corner.webp);
+	position: absolute;
+	top:-1rem;
+	left: 50%;
+	z-index: 2;
+	transform: translate(-50%);
+	
+}

@@ -1,0 +1,32 @@
+@import "../base/var.scss";
+.task-progress{
+	font-size: 18px;
+	font-weight: 600;
+	&>*+*{margin-top: remy(16);}
+	.task-progress__deadline, .task-progress__val{
+		display: flex;
+		align-items: center;
+		column-gap: remy(6);
+	}
+	.prosress-line{
+		position: relative;
+		width: 100%;
+		height: remy(4);
+		border-radius: remy(4);
+		background-color: #ededed;
+		span{
+			transition: .3s; 
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			border-radius: remy(4);
+			z-index: 2;
+			background-color: $accent;
+		}
+	} 
+	@media(max-width:remy(399)){
+		font-size: 1rem;
+	}
+}

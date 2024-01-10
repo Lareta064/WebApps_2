@@ -1,0 +1,116 @@
+@import "../base/var.scss";
+/**********стр Уведомления Отправка**************/
+.notification-tabs__body {
+
+	.title {
+
+		margin-bottom: 2.25rem;
+		text-align: center;
+	}
+
+	.filters-group .btn.btn-slim {
+		margin-left: remy(80);
+
+		@media(max-width: remy(1364)) {
+			margin-left: auto;
+		}
+
+		@media(max-width: remy(499)) {
+			width: 100%;
+		}
+	}
+
+	@media(max-width: remy(499)) {
+		.drop-filter--sort {
+			width: 100%;
+		}
+
+		.filters-group {
+			row-gap: 1rem;
+		}
+	}
+
+
+	#check-all {
+		white-space: nowrap;
+	}
+
+	.contractors {
+		width: 100%;
+	}
+}
+
+.notification-step-one {
+	padding-top: 1.25rem;
+}
+
+/*****************STER 2*****************/
+.notification-step-two {
+
+	padding-top: 1.5rem;
+
+	background-color: #f9f9f9;
+
+	.back-link {
+		margin-bottom: 1rem;
+	}
+}
+
+.notification-form-group>*+* {
+	margin-top: 1rem;
+}
+
+.notification-form-group {
+	.drop-filter {
+		max-width: remy(330);
+	}
+
+	.form-item {
+		max-width: remy(650);
+	}
+
+	textarea {
+		height: remy(106);
+	}
+
+	.form-item input::placeholder,
+	.form-item textarea::placeholder {
+		color: rgba(51, 51, 51, 0.40);
+	}
+
+	.form-btn {
+		margin-top: remy(24);
+	}
+}
+
+.notification-step-one,
+.notification-step-two {
+	display: none;
+	opacity: 0;
+
+	&.active {
+		display: block;
+		animation-name: opacity;
+		animation-duration: 0.5s;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+	}
+}
+
+@media (max-width: remy(767)) {
+
+	.notification-step-one,
+	.notification-step-two {
+		padding-top: 0;
+	}
+}
+
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

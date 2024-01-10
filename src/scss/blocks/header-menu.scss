@@ -1,0 +1,48 @@
+@import "../base/var.scss";
+/*========== HEADER MENU ========*/
+.header__menu{
+	margin-left: auto;
+	
+	nav{
+		display: flex;
+		align-items: center;
+		column-gap:remy(44);
+		@media (max-width: remy(1199)) {
+		  column-gap: remy(28);
+		}
+		@media (max-width: remy(991)) {
+			column-gap: 0;
+			row-gap: remy(16);
+			flex-direction: column;
+			padding-top: remy(30);
+		}
+	}
+	a{
+		font-weight: 500;
+		font-size: 1.125rem;
+		padding: 6px 0;	
+		-webkit-transition: color .3s;
+		transition: color .3s;
+		position: relative;
+		
+		&.active, &:hover{color: $accent;}
+	}
+
+}
+@media (max-width: remy(991)) {
+	.header__menu{
+	   position: fixed;
+	   z-index: 10;
+	   top: remy(65);
+	   left: 0;
+	   bottom: 0;
+	   right: 0;
+	   background-color: $bgColor;
+	   transition: .3s;
+	   transform: translateX(110%);
+	   &.active{transform: translateX(0);}
+
+	}
+    
+	
+}

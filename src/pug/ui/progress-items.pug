@@ -1,0 +1,90 @@
+include ../layouts/_mixins-links.pug
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+		//====убрать синий цвет у ссылок в сафари ========
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet", href="../css/main.css")
+		title UI-KIT
+
+	body.body-dashboard
+
+		include ui-navigation.pug
+
+		block content
+			.container-dashboard
+				h2 Прогресс бар
+
+				.container-dashboard__content
+					ul.ui-components
+						li
+							.task-progress
+								.task-progress__val
+									.progress-icon
+									p Прогресс выполнения - 
+									span.progress-percent(data-percent="68") 68%
+								.prosress-line
+									span.progress-indicator
+
+								.task-progress__deadline
+									.clock-item
+									p Дедлайн:
+									span 7 дн. 8 ч. 32 мин.
+								script.
+									document.addEventListener("DOMContentLoaded", function (){
+									const progressBlocks = document.querySelectorAll('.task-progress');
+									if (progressBlocks.length>0){
+										for (let item of progressBlocks){
+											const itemProgressVal = item.querySelector('[data-percent]').getAttribute('data-percent');
+											item.querySelector('.progress-indicator').setAttribute('style',`width: ${itemProgressVal}%` );
+										}
+									}
+									});
+							pre.
+								.task-progress
+									.task-progress__val
+										.progress-icon
+										p Прогресс выполнения - 
+										span.progress-percent(data-percent="68") 68%
+									.prosress-line
+										span.progress-indicator
+									.task-progress__deadline
+										.clock-item
+										p Дедлайн:
+										span 7 дн. 8 ч. 32 мин.	
+						hr
+						li(style="display: flex; colum-gap: 1rem;")
+							+circle-progress(75)
+							+circle-progress-medium(70)
+							+circle-progress-big(70)
+							script.
+								document.addEventListener("DOMContentLoaded", function (){
+									function updateProgress(){
+										const donuts = document.querySelectorAll(".loading-donut");
+										
+										donuts.forEach(donut => {
+											const donutSegment = donut.querySelector(".donut-segment");
+											const progressValue = +donut.getAttribute('data-progress') || 0;
+											const circumference = 2 * Math.PI * parseFloat(donutSegment.getAttribute("r"));
+
+											const progressOffset = (100 - progressValue) / 100 * circumference;
+											donutSegment.style.strokeDasharray = `${circumference} ${circumference}`;
+											donutSegment.style.strokeDashoffset = progressOffset;
+
+											donut.dataset.progress = progressValue; // Update data attribute
+										}); 
+									};
+
+									//- Invoke update progress
+									updateProgress();
+								});
+							pre.
+								+circle-progress(75)
+								+circle-progress-medium(70)
+								+circle-progress-big(70)

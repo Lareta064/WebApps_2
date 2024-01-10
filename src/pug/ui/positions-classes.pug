@@ -1,0 +1,63 @@
+include ../layouts/_mixins-links.pug
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+		//====убрать синий цвет у ссылок в сафари ========
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet", href="../css/main.css")
+		title UI-KIT
+
+	body.body-dashboard
+
+		include ui-navigation.pug
+
+		block content
+			.container-dashboard
+				h2 Вспомогрательные классы
+
+				.container-dashboard__content
+					ul
+						li
+							.border-shadow(style="width:400px; height:50px;")
+							pre.
+								.border-shadow - класс задает тень, закругление и паддинги в 16пикс
+						hr
+						li
+							.scroll-right.border-shadow(style="width:400px; height:200px;")
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus est atque, quidem dolores suscipit blanditiis aliquam nobis aspernatur fugiat facilis veniam nostrum voluptate vero voluptatibus voluptatum, officiis adipisci. Dolore, eum!Perspiciatis, sit non minima perferendis ad hic vero magni rem nostrum debitis repudiandae a deserunt omnis eligendi quae quam dolore commodi, harum nisi, accusantium laudantium voluptates ratione iusto? Recusandae, dolorum.Excepturi veritatis quod atque itaque incidunt reiciendis deserunt, rerum quasi sit suscipit quos sint, cum quas sequi, dicta modi doloribus neque ea hic accusantium blanditiis nemo qui saepe? Modi, tempore!
+							pre.
+								Класс .scroll-right задает полосу прокрутки справа при перезаполнении блока
+						hr
+						li
+							.scroll-left.border-shadow(style="width:400px; height:200px;")
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus est atque, quidem dolores suscipit blanditiis aliquam nobis aspernatur fugiat facilis veniam nostrum voluptate vero voluptatibus voluptatum, officiis adipisci. Dolore, eum!Perspiciatis, sit non minima perferendis ad hic vero magni rem nostrum debitis repudiandae a deserunt omnis eligendi quae quam dolore commodi, harum nisi, accusantium laudantium voluptates ratione iusto? Recusandae, dolorum.Excepturi veritatis quod atque itaque incidunt reiciendis deserunt, rerum quasi sit suscipit quos sint, cum quas sequi, dicta modi doloribus neque ea hic accusantium blanditiis nemo qui saepe? Modi, tempore!
+							pre.
+								Класс .scroll-left задает полосу прокрутки слева при перезаполнении блока
+						hr
+						li
+							.flex-center.border-shadow(style="width:400px; height:100px;")
+								h1 Item center
+							pre.
+								.flex-center
+									h1 Item center
+								Элемент выстраивается точно по центру родительского блока
+						hr
+						li
+							.column-four
+								+progress-card-input(num = 70)
+								+progress-card-input(num = 70)
+								+progress-card-input(num = 70)
+								+progress-card-input(num = 70)
+							pre.
+								поставить элементы в 4 колонки
+								.column-four
+									+progress-card-input(num = 70)
+									+progress-card-input(num = 70)
+									+progress-card-input(num = 70)
+									+progress-card-input(num = 70)

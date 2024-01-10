@@ -1,0 +1,14 @@
+mixin progress-card(num=87)
+	.progress-card
+		.progress-card__bar
+			+circle-progress(num)
+		.progress-card__info
+			.progress-card__title Иванов Иван Иванович
+			p Сварщик 5 разряда
+
+mixin progress-card-input(num = 70)
+	label.checkbox-item
+		+progress-card(num)
+		.form-item
+			input(type="checkbox" name="contractor")
+			span.fake-checkbox

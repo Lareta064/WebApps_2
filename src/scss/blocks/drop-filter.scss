@@ -1,0 +1,88 @@
+@import "../base/var.scss";
+/*=========tabs-header  drop-filter =====*/
+.drop-filter  .custom-drop__icon{
+	border-radius: 50%;
+	transition: .3s; 
+	background-size: remy(13);
+	
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='13' height='7' viewBox='0 0 13 7' fill='none'%3e%3cpath d='M12.0413 1.125L6.49967 5.875L0.958008 1.125' stroke='%23007AFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+}
+.drop-filter.drop-filter--list{
+	border-radius: remy(10);
+	border: 1px solid #E3E3E3;
+	.custom-drop__list{
+		border: 1px solid #E3E3E3;
+		border-top:0;
+	}
+	.custom-drop__item:not(:last-child) {
+		border-bottom: 1px solid #e3e3e3;
+	}
+	.custom-drop__val{box-shadow:none;}
+}
+.drop-filter.bg-white input{
+	background-color: #fff;
+}
+.drop-filter.drop-filter--small {
+	input {
+		background-color: #fff;
+		font-size: remy(14);
+		letter-spacing: 0.01em;
+		padding-left: 10px;
+		height: remy(33);
+	}
+	.custom-drop__icon{
+		width: remy(17);
+		height: remy(17);
+		background-size:remy(11);
+		right: 7px;
+		
+	}
+	.custom-drop__list p{
+		font-size: remy(14);
+		letter-spacing: 0.01em;
+		padding: remy(10);
+	}
+}
+.drop-filter.drop-filter--year{
+	width: remy(80);
+}
+.drop-filter.drop-filter--sort .custom-drop__icon{
+	    position: absolute;
+		left: remy(10);
+		background-size:contain;
+		z-index: 2;
+		display: inline-block;
+		width: remy(17);
+		height: remy(17);
+		flex-shrink: 0;
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17' viewBox='0 0 17 17' fill='none'%3e%3cpath d='M2.83398 12.0415H7.79232' stroke='%23007AFF' stroke-width='1.2' stroke-linecap='round'/%3e%3cpath d='M2.83398 8.5L7.79232 8.5' stroke='%23007AFF' stroke-width='1.2' stroke-linecap='round'/%3e%3cpath d='M2.83398 4.9585L7.79232 4.9585' stroke='%23007AFF' stroke-width='1.2' stroke-linecap='round'/%3e%3cpath d='M12.041 2.83317L12.041 14.1665M12.041 2.83317L9.91602 5.6665M12.041 2.83317L14.166 5.6665M12.041 14.1665L14.166 11.3332M12.041 14.1665L9.91602 11.3332' stroke='%23007AFF' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+}
+.drop-filter.drop-filter--sort{
+	 input{
+	padding-right: remy(10);
+	padding-left: remy(30);
+	background-color: #fff;
+	font-size: remy(14);
+	letter-spacing: 0.01em;}
+	.custom-drop__item p{font-size: 14px;}
+}
+.drop-filter .custom-drop.active{
+	.custom-drop__icon{
+		transform: translateY(-50%) rotate(180deg);
+	}
+}
+
+.drop-filter .drop-filter input{
+	background-color: $white;
+}
+.tabs-header .drop-filter{
+	position: relative;
+	z-index: 5;
+	width: remy(210);
+	@media (max-width: remy(991)) {
+	  width: 35%;
+	}
+	@media (max-width: remy(767)) {
+		width: 100%;
+	}
+}

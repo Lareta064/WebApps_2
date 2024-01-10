@@ -1,0 +1,67 @@
+@import "var.scss";
+/*============BUTTONS===========*/
+.btn, .btn-outline{
+	font-size: 1rem;
+	font-weight: 600;
+	
+	padding: 0 remy(32);
+	height: remy(44);
+	
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	column-gap:remy(12);
+	border-radius: remy(48);
+	border:remy(2)solid $accent;
+	transition: .3s;
+	white-space: nowrap;
+	svg{color: inherit;}
+
+}
+.btn.btn--slim{
+	height:remy(40);
+	padding: 0 remy(24);
+}
+
+.btn.btn-icon{
+
+	span[class*="-icon"]{display: none;}
+	@media (max-width: remy(767)) {
+		width: remy(38);
+		height: remy(38);
+		flex-shrink: 0;
+		border-radius: 50%;
+		padding: 0;
+		span{display: none;}
+		span[class*="-icon"] {display: flex;}
+
+	}
+}
+.btn{
+	color: $white;
+	background-color: $accent;
+	&:hover {
+		color: $white;
+		background-color: lighten($accent, 10%);
+		border-color: lighten($accent, 10%);
+	}
+}
+.btn-outline {
+	color: $text;
+	background-color: $white;
+
+	&:hover {
+		
+		background-color: $lightBorder;
+		
+	}
+}
+.chevron-down{
+	width: remy(19);
+	height: remy(19);
+	flex-shrink:0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: .3s; 
+}

@@ -1,0 +1,26 @@
+mixin header(arg, addCl)
+	header.header
+		.container
+			.header__content
+				a(href="index.html").logo
+					img(src="./img/logo.webp", alt="logo")
+				
+				//========== NAVIGATION =====
+				+header-menu(arg)
+				
+				//========== HEADER ICONS =====
+				.header__buttons
+					//======= notification icon =====
+					if addCl
+						a(href="notifications.html").btn-notify.active
+							span.label-num 3
+							svg.svg-notify
+								use(href="./img/spriteSvg.svg#svg-notify")
+					else
+						a(href="notifications.html").btn-notify
+							span.label-num 3
+							svg.svg-notify
+								use(href="./img/spriteSvg.svg#svg-notify")
+					//======= mobile menu icon =====
+					button.menu-toggle
+						span

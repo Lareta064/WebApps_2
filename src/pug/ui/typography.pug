@@ -1,0 +1,76 @@
+include ../layouts/_mixins-links.pug
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+		//====убрать синий цвет у ссылок в сафари ========
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet", href="../css/main.css")
+		title UI-KIT
+
+	body.body-dashboard
+
+		include ui-navigation.pug
+
+		block content
+			.container-dashboard
+				h2 Типографика
+
+				.container-dashboard__content
+					ul
+						li
+							.head Заголовок  28пикс
+							pre.
+								.head Заголовок  28пикс
+						li 
+							.title Заголовок 24px
+							pre.
+								.title Заголовок 24px
+						hr
+						li
+							.title-medium Заголовок в 20пикс
+							pre.
+								.title-medium Заголовок в 20пикс
+						
+						hr
+						li
+							.title-small Заголовок в 18пикс
+							pre.
+								.title-small Заголовок в 18пикс
+						hr
+						li
+							.text-gray Серый текст
+							pre.
+								.text-gray Серый текст
+						
+						hr
+						li
+							.link какая-то ссылка
+							pre.
+								.link какая-то ссылка
+						hr
+						li
+							.txt-accent акцетный текст
+							pre.
+								.txt-accent акцетный текст
+						hr
+						li
+							.back-link Вернуться назад
+							pre.
+								.back-link Вернуться назад
+
+						hr
+						li
+							.text-center Текст по центру
+							pre.
+								.text-center Текст по центру
+						hr
+						li(style="width: 300px; font-weight:700")
+							.text-cut Название задачи, которое может переноситья на следующую строку, а потом и на ещё 1 
+							pre.
+								.text-cut Название задачи, которое может переноситья на следующую строку, а потом и на ещё 1

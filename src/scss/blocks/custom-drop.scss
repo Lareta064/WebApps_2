@@ -1,0 +1,112 @@
+@import "../base/var.scss";
+/*============CUSTOM DROP ============*/
+.custom-drop {
+	
+	border-radius: remy(8);
+	z-index: 3;
+	position: relative;
+	&__val {
+		display: flex;
+		column-gap: remy(10);
+		border-radius: remy(8);
+		border: 1px solid $borderColor;
+		position: relative;
+		box-shadow: 0px 0px 8px 4px rgba(151, 151, 151, 0.10);
+		// box-shadow: 0px 0px remy(8) remy(4) $boxSh;
+        border-radius:5px;
+		overflow: hidden;
+		input {
+			border-radius: 0;
+			width: 100%;
+			display: block;
+			height: remy(40);
+			padding-left: remy(14);
+			border-radius: remy(10);
+			background: $inputBg;
+			letter-spacing:0.01em;
+		}
+	}
+
+	&__list {
+		position: absolute;
+		overflow: hidden;
+		left: 0;
+		top: 100%;
+		right: 0;
+		background-color: $white;
+		// box-shadow: 0px 0px remy(8) remy(4) $boxSh;
+		border-radius: 0 0 remy(8) remy(8);
+		border: 1px solid $borderColor;
+		border-top: none;
+		display: none;
+		ul{
+			max-height: remy(344);
+			overflow: hidden;
+			overflow-y: auto;
+			scrollbar-width: thin;
+			scrollbar-color: $scrolBarBg $accent;
+			// direction: rtl;
+			scrollbar-gutter:stable;
+			margin-top: remy(8);
+			margin-bottom:remy(8);
+			&::-webkit-scrollbar{
+				display: block;
+				border-radius: remy(6);
+				width: remy(6);
+				height: remy(20);
+			}
+			&::-webkit-scrollbar-track {
+				background-color: $scrolBarBg;
+				
+			}
+			&::-webkit-scrollbar-thumb {
+				background-color: $accent;
+				border-radius: remy(6);
+				
+			}
+		}
+	}
+
+	&__item {
+		text-align: left;
+		transition: .3s;
+		p{
+			padding: remy(12) remy(14);
+		}
+		
+		cursor:pointer;
+		&:not(:last-child){border-bottom:1px solid $borderColor;}
+		&:hover {
+			background-color: $borderColor;
+		}
+	}
+   
+}
+
+.custom-drop.custom-drop--relative{
+	.custom-drop__list {
+			position: relative;
+			left: auto;
+			top: auto;
+			right: auto;
+		}
+}
+.custom-drop.active {
+	.custom-drop__list {
+		display: block;
+	}
+
+	.custom-drop__val{
+		border-radius: remy(8) remy(8) 0 0;
+	}
+}
+ .custom-drop__icon {
+ 	width: remy(40);
+ 	height: remy(40);
+ 	position: absolute;
+ 	top: 50%;
+ 	transform: translateY(-50%);
+ 	right: 0;
+ 	z-index: 2;
+
+ }

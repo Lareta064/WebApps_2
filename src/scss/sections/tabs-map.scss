@@ -1,0 +1,46 @@
+@import "../base/var.scss";
+.map-tab{
+	display: grid;
+	grid-template-columns: remy(328) 1fr;
+	gap: 1rem;
+	padding-top: remy(15);
+	padding-top: remy(65);
+	.search-block{
+		border-radius: remy(12);
+		background: #FFF;
+		padding: 1rem;
+		box-shadow: 0px 0px remy(8) remy(4) $boxSh;
+	}
+	
+	.map-tab__aside>*+*{margin-top: 16px;}
+}
+.map-tab__body .map{
+	border-radius: remy(20);
+	box-shadow: 0px 0px remy(8) remy(4) $boxSh;
+	height: 100%;
+	min-height: remy(560);
+}
+@media (max-width: remy(1199)) {
+	.map-tab{
+		grid-template-columns: 1fr;
+	}
+	.map-tab .map-tab__aside>*+* {margin-top: 0;}
+	.map-tab .map-tab__aside{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		align-items: flex-start;
+	}
+}
+@media (max-width: remy(767)) {
+	
+	.map-tab .map-tab__aside {
+		display: grid;
+		grid-template-columns: 1fr ;
+		gap: 1rem;
+	}
+	.map-tab .search-block{
+		border-radius: remy(8);
+		padding: 0.5rem;
+	}
+}

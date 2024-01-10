@@ -1,0 +1,22 @@
+@import "var.scss";
+.checkbox-item{
+	display: flex;
+	position: relative;
+	align-items: center;
+	column-gap:remy(12);
+	cursor:pointer;
+	&:hover {
+			.progress-card p {
+				color: $text;
+			}
+			.fake-checkbox{background-color: #D2D2D2;}
+	
+		}
+	
+	.progress-card{
+		flex-grow: 1;
+		transition: .3s; 
+		
+		
+	}
+}

@@ -1,0 +1,48 @@
+//===============MODAL ВЫБОР ИСПОЛНИТЕЛЕЙ ==============
+.modal-frame-wrapper.modal-frame--large(frame-modal="contractors")
+	.modal-frame
+		.icon-close(frame-close)
+		.modal-frame__body
+			.title.text-center Выбрать исполнителя
+			
+			//======строка с фильтрами ===============
+			.filters-group
+				+search-block('', '','','', 'Поиск...')
+				
+				+custom-drop('Сортировать', ['Сортировать', 'от А-Я', 'от Я-А','по увеличению %','по уменьшению %' ])(class="drop-filter--sort")
+				
+				.filters-group__res Выбрано #[span 6 ] из #[span 6]
+			
+			//================ блок с исполнителями ====
+			.contractors
+				.scroll-right
+					.column-trio
+						+progress-card-input
+						+progress-card-input(88)
+						+progress-card-input
+						+progress-card-input
+						+progress-card-input(34)
+						+progress-card-input
+						+progress-card-input
+						+progress-card-input(41)
+						+progress-card-input
+						+progress-card-input
+						+progress-card-input(78)
+						+progress-card-input
+						+progress-card-input(88)
+						+progress-card-input
+						+progress-card-input
+						+progress-card-input(34)
+						+progress-card-input
+						+progress-card-input
+						+progress-card-input(41)
+						+progress-card-input
+						+progress-card-input
+						+progress-card-input(78)
+			
+			.modal-pagination
+				+pagination(class="pagination--small")
+	
+				button(frame-close).btn.btn-icon
+					span.check-icon
+					span Готово

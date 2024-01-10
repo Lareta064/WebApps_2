@@ -1,0 +1,35 @@
+@import "../base/var.scss";
+/*==========switch buttons=====*/
+.switch-btn{
+	display: inline-flex;
+	align-items:center;
+	background-color: $bgColor;
+	border-radius: remy(40);
+	&__item{
+		color: $text;
+		font-size: 1rem;
+		padding: 0 remy(18);
+		height: remy(40);
+		line-height: remy(40);
+		border-radius: remy(40);
+		background-color: $bgColor;
+		transition: .3s;
+		text-align: center;
+		cursor:pointer;
+		
+	}
+	&__item.active{
+		background-color: $accent;
+		color: $white;
+	}
+}
+
+@media (max-width: remy(574)) {
+	.switch-btn {
+		width: 100%;
+		&__item{
+			width: 50%;
+		}
+	}
+	
+}

@@ -1,0 +1,40 @@
+@import "../base/var.scss";
+/*============HEADER==============*/
+.header{
+	height: 5rem;
+	padding-top: remy(5);
+	padding-bottom: remy(5);
+	background-color: #fff;
+	position: relative;
+	box-shadow: 0 0 0.5rem 0.25rem rgba(117, 117, 117, .1);
+	&__content{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__buttons{
+		margin-left: 4rem;
+		display: flex;
+		align-items: center;
+		column-gap: 1.25rem;
+		@media(max-width: remy(1199)) {
+			margin-left: 1.25rem;
+		}
+	}
+	@media (max-width: remy(991)) {
+		height: remy(60);
+		// padding-top: 1rem;
+		// padding-bottom: 1rem;
+	}
+}
+.btn-notify{
+	position: relative;
+	width: 1.8125rem;
+	height: 1.8125rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&.active{
+		svg{fill: $accent;}
+	}
+}

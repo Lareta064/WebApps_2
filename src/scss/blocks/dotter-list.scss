@@ -1,0 +1,26 @@
+@import "../base/var.scss";
+.dotter-li{
+	display: flex;
+	column-gap: remy(8);
+	width: 100%;
+	@media(max-width:remy(574)){
+		flex-wrap:wrap;
+		row-gap:remy(12);
+	}
+	&__text{
+		flex-shrink: 0;
+	}
+	&__val{
+		color: $accent;
+		flex-shrink:0;
+	}
+	.dotter-line{
+		flex-grow:1;
+		height: 1px;
+		background-image: linear-gradient(to right, #fff 40%, rgba(51, 51, 51, 0.30) 40%);
+		background-size: remy(9) 1px;
+		background-repeat: repeat-x;
+		align-self: flex-end;
+	}
+}
+.dotter-li +.dotter-li{margin-top: remy(19);}

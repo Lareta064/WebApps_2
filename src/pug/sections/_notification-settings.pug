@@ -1,0 +1,40 @@
+
+.notification-settings
+	
+	//====== автонастройка ======
+	.settings-auto__list
+		.title-medium Автоотправление
+		ul.settings-auto__list
+			+settings-auto('О скором дедлайне')
+			+settings-auto('О выборе как исполнителя')
+			+settings-auto('О завершении заказа')
+			+settings-auto('Пункт')
+			+settings-auto('Пункт')
+	
+	
+	.settings-manual
+		.settings-manual__title
+			.title-medium Цикличное уведомление
+			button(frame-btn="customSetting").link Настроить выборочно 
+			
+
+		.notification-form-group
+			+custom-drop('Раз в день', ['Два раза в день', 'Раз в три дня', 'Один раз в неделю'])(class="bg-white")
+			
+			
+			.form-item__row
+				.form-item.form-item--white
+					label.label C
+					input(type="text" value="09.11.23 в 12:00")
+				.form-item.form-item--white
+					label.label По
+					input(type="text" value="09.11.23 в 12:00")
+			
+			+custom-drop('Выберете тип уведомления', ['Тип 1', 'Тип 2', 'Тип 3', 'Тип 4', 'Тип 5', 'Тип 6', 'Тип 7'])(class="bg-white")
+			
+			.form-item.form-item--white
+				input(type="text" placeholder="Напишите заголовок уведомления" name="subject")
+			.form-item.form-item--white
+				textarea(type="text" placeholder="Напишите текст уведомления" name="message")
+			.form-btn
+				button(type="submit").btn Начать цикл

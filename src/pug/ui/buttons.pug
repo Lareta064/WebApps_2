@@ -1,0 +1,134 @@
+include ../layouts/_mixins-links.pug
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+		//====убрать синий цвет у ссылок в сафари ========
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet", href="../css/main.css")
+		title UI-KIT
+
+	body.body-dashboard
+
+		include ui-navigation.pug
+
+		block content
+			.container-dashboard
+				h2 Кнопки
+
+				.container-dashboard__content
+					ul
+						li
+							button.btn Назначить исполнителя
+							pre.
+								button.btn Назначить исполнителя
+						li
+
+							button.btn
+								svg.svg-task
+									use(href="../img/spriteSvg.svg#svg-task")
+								span Выбрать задачу
+							pre.
+								button.btn
+									svg.svg-task
+										use(href="./img/spriteSvg.svg#svg-task")
+									span Выбрать задачу
+						li
+							button.btn-outline Назначить исполнителя
+							pre.
+								button.btn-outline Назначить исполнителя
+						hr
+						li
+							p На моб версии трансформируется в кнопку с иконкой галочка
+							button.btn.btn-icon
+								span.check-icon
+								span Готово
+							pre.
+								button.btn.btn-icon
+									span.check-icon
+									span Готово
+						hr
+						li
+							//========= switch ========
+							.tabs
+								.switch-btn.js-group
+									button.switch-btn__item.active.js-group-item(tab-btn="incoming") Входящие
+									button.switch-btn__item.js-group-item(tab-btn="outcoming") Исходящие
+								
+								//=====переключаемый контент
+								.active(tab-body="incoming")
+									h2 Входящие
+								div(tab-body="outcoming")
+									h2  ИСХОДЯЩИЕ
+
+							pre.
+								.tabs
+									.switch-btn.js-group
+										button.switch-btn__item.active.js-group-item(tab-btn="incoming") Входящие
+										button.switch-btn__item.js-group-item(tab-btn="outcoming") Исходящие
+									
+									//=====переключаемый контент
+									.active(tab-body="incoming")
+										h2 Контент Входящие
+									div(tab-body="outcoming")
+										h2 Контент ИСХОДЯЩИЕ
+							script.
+								document.addEventListener("DOMContentLoaded", function () {
+									//======for switch item  ========
+									const itemsGroup = document.querySelectorAll('.js-group');
+									if (itemsGroup.length > 0) {
+										for (let item of itemsGroup) {
+											const itemsGroupChilds = item.querySelectorAll('.js-group-item');
+											item.addEventListener('click', function (e) {
+												for (let el of itemsGroupChilds) {
+													el.classList.remove('active');
+												}
+												e.target.classList.add('active');
+											});
+										}
+									}
+									//====== each group and toggle active class ========
+									const tabs = document.querySelectorAll('.tabs');
+									console.log(tabs);
+									if (tabs.length > 0) {
+										for (let item of tabs) {
+											const itemBtns = item.querySelectorAll('[tab-btn]');
+											const itemContents = item.querySelectorAll('[tab-body]');
+											const tabOptions = item.querySelector('.tabs-body__options');
+											if (itemBtns.length > 0 || itemContents.length > 0) {
+												item.addEventListener('click', function (e) {
+													// e.stopPropagation();
+													if (e.target.hasAttribute('tab-btn')) {
+														for (let btn of itemBtns) {
+															btn.classList.remove('active');
+														}
+														e.target.classList.add('active');
+
+														const btnData = e.target.getAttribute('tab-btn');
+
+														for (let content of itemContents) {
+
+															content.classList.remove('active');
+
+															const contentData = content.getAttribute('tab-body');
+															if (contentData == btnData) {
+																content.classList.add('active');
+															}
+														}
+														/**********если кликаем по карте********** */
+														if (e.target.textContent == 'Карта') {
+															tabOptions.classList.add('hide');
+														} else {
+															tabOptions.classList.remove('hide');
+														}
+													}
+												});
+											}
+										}
+									}
+								});

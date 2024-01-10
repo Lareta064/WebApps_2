@@ -1,0 +1,20 @@
+@import "var.scss";
+/*======== HEADER LOGO ====*/
+.logo{
+	z-index: 5;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 0.9375rem;
+	position: relative;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	img{
+		width: auto;
+		height: remy(70);
+		object-fit: contain;
+	}
+    @media (max-width: remy(1023)) {img {height: remy(54);}}
+	@media (max-width: remy(767)) {img{height: remy(50);}}
+}

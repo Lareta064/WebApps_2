@@ -1,0 +1,7 @@
+mixin header-menu(arg)
+	.header__menu#header-menu
+		nav
+			each item in arg
+				a(href=""+ item.link class=(item.active == 'true'? 'active' : '')) #{item.name}
+					if item.label
+						span.label-num #{item.label}

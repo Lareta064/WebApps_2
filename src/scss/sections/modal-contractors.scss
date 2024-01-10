@@ -1,0 +1,70 @@
+@import "../base/var.scss";
+.contractors{
+	width:calc(100% + remy(16));
+	.scroll-right{
+		padding-right: remy(16);
+		max-height: calc(100vh - 23.75rem);
+		@media (max-width: remy(1199)) {
+			max-height: calc(100vh - 18.125rem);
+			scrollbar-width: none;
+			&::-webkit-scrollbar{display: none;}
+		}
+				@media (max-width: remy(767)) {
+					max-height: calc(100vh - 19.75rem);
+		
+				}
+		
+				@media (max-width: remy(399)) {
+					max-height: calc(100vh - 21.75rem);
+				}
+	}
+	.column-trio{
+		row-gap:0;
+	}
+	@media(max-width:remy(1024)){
+		width: 100%;
+	}
+}
+.modal-frame--large .modal-frame{display: flex;}
+.modal-frame--large .modal-frame__body{
+	position: relative;
+	width: 100%;
+}
+.modal-pagination{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	justify-content: flex-end;
+	margin-top: remy(20);
+	background-color: #fff;
+	z-index: 2;
+	
+	.pagination{
+		position: absolute;
+		left: 50%;
+		top:50%;
+		transform: translate(-50%, -50%);
+		margin-top: 0;
+		
+	}
+	@media(max-width: remy(767)) {
+		position: absolute;
+		bottom: -0.5rem;
+		left: 0;
+		right: 0;
+	}
+	@media(max-width: remy(574)){
+		margin-top: remy(16);
+		justify-content: space-between;
+		height: remy(44);
+		.pagination{
+			position: relative;
+			left: auto;
+			top: auto;
+			transform: translate(0, 0);
+		}
+		
+	}
+}
+// .contractors .modal-pagination{padding-right: 1rem;}

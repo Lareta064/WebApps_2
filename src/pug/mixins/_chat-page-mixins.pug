@@ -1,0 +1,15 @@
+mixin chat-contact-item(timeBlock, label, curClass)
+	div(class=(curClass == 'true' ? 'chat-contacts-item current' : 'chat-contacts-item'))
+		.chat-contacts__top
+			.chat-contacts__name
+				p Иванов Иван Иванович
+			if timeBlock
+				.chat-time
+					.chat-icon
+						.db-check
+					p 16:27
+		
+		.chat-contacts__message
+			if label
+				span.span-num 2
+			p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut

@@ -1,0 +1,19 @@
+mixin search-block(addCl, items, title, val, plach)
+	.search-block
+		if title
+			.title #{title}
+		div(class=(addCl == 'rel' ? 'custom-drop custom-drop--relative' : 'custom-drop'))
+			.custom-drop__val
+				if  plach
+					input(type="text" value="" placeholder=""+plach)
+				else
+					input(type="text" value=""+ val)
+				button.search-btn
+		    
+			if items !== ''
+				.custom-drop__list
+					ul
+						each item in items
+							li.custom-drop__item
+								p #{item}
+					

@@ -1,0 +1,20 @@
+@import "../base/var.scss";
+.progress-card{
+	display: flex;
+	align-items: center;
+	column-gap:remy(12);
+	color: $text;
+	border-bottom: remy(1.5) solid $lightBorder;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	max-width: remy(450);
+}
+.progress-card__info p{
+	color: $txtGrey;
+}
+
+.progress-card__title{
+	font-size: remy(18);
+	margin-bottom: remy(12);
+	font-weight: 500;
+}

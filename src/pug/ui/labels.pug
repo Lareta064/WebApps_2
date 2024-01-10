@@ -1,0 +1,63 @@
+include ../layouts/_mixins-links.pug
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+		//====убрать синий цвет у ссылок в сафари ========
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet", href="../css/main.css")
+		title UI-KIT
+
+	body.body-dashboard
+
+		include ui-navigation.pug
+
+		block content
+			.container-dashboard
+				h2 Лейблы
+				.container-dashboard__content
+					ul
+						li
+							a(href="notifications.html").btn-notify.active
+								span.label-num 3
+								svg.svg-notify
+									use(href="../img/spriteSvg.svg#svg-notify")
+							pre.
+								Лейбл на красном фоне - это спан с классом 'label-num' 
+								a(href="notifications.html").btn-notify.active
+									span.label-num 3
+									svg.svg-notify
+										use(href="../img/spriteSvg.svg#svg-notify")
+						hr
+						li
+							.tabs-menu
+								nav
+									button.tabs-menu__item.active(tab-btn="1") Клиенты
+										span.span-num 3
+									button.tabs-menu__item(tab-btn="2") Исполнители
+										span.span-num.disable 3
+							pre.
+								
+								Лейбл на синем фоне - это спан с классом 'span-num'
+								Лейбл на сером  фоне - это спан с двумя классами  'span-num disable' 
+
+								.tabs-menu
+									nav
+										button.tabs-menu__item.active(tab-btn="1") Клиенты
+											span.span-num 3
+										button.tabs-menu__item(tab-btn="2") Исполнители
+											span.span-num.disable 3
+						hr
+						li
+							div(style="position: relative; width: 400px")
+								h3 Иванов Иван Иванович
+								span.online-state
+							pre.
+								div(style="position: relative")
+									p Иванов Иван Иванович
+									span.online-state

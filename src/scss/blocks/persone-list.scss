@@ -1,0 +1,28 @@
+@import "../base/var.scss";
+.persone-list{
+	&-item{
+		display: flex;
+		align-items: center;
+		column-gap:remy(12);
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid $lightBorder;
+	}
+	&__rating{
+		flex-shrink:0;
+		font-size: remy(34);
+		font-weight: 600;
+		letter-spacing: 0.01em;
+	}
+	&__name{
+		p{
+			font-weight: 500;
+			letter-spacing: 0.01em;
+		}
+		span{
+			color: rgba(51, 51, 51, 0.40);
+			letter-spacing: 0.01em;
+			font-size: remy(14);
+		}
+	}
+}

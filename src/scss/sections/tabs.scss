@@ -1,0 +1,95 @@
+@import "../base/var.scss";
+/*=========TABS=========*/
+.column-trio{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	gap:remy(24);
+	@media (max-width: remy(1199)) {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: remy(48);
+	}
+	@media (max-width: remy(991)) {
+		column-gap: remy(24);
+	}
+	@media (max-width: remy(767)) {
+		grid-template-columns: repeat(1, 1fr);
+		column-gap: remy(16);
+	}
+}
+.tabs{
+	position: relative;
+}
+.tabs-body__options{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&.hide{
+		display: none;
+	}
+	margin-bottom: remy(15);
+	.custom-drop__val input {background-color: #fff;}
+	.drop-filter  .form-item__btn{background-color: #fff;}
+	@media (max-width: remy(1139)) {
+		padding-top: remy(65);
+	}
+	@media (max-width: remy(574)) {
+		flex-direction: column-reverse;
+		row-gap:1rem;
+		.drop-filter{width: 100%;}
+	}
+	
+}
+.tabs-menu{
+	width: fit-content;
+	z-index: 3;
+	@media (max-width: remy(767)) {
+		overflow: hidden;
+		overflow-x: auto;
+		scrollbar-width: none;
+		
+		&::-webkit-scrollbar{
+		display: none;
+		}
+	}
+}
+.tabs-menu nav{
+	display: flex;
+	column-gap:4px;
+	
+
+}
+.tabs-menu__item{
+	position: relative;
+	
+	text-align: center;
+	min-width: remy(142);
+	font-weight: 500;
+	padding-top: remy(10);
+	padding-bottom: remy(10);
+	color: $txtGrey;
+	border-bottom: 1.5px solid $txtGrey;
+	cursor:pointer;
+	transition: .3s; 
+	&.active{
+		color: $text;
+		border-bottom: 1.5px solid $accent;
+	}
+	@media (max-width: remy(991)) {
+		min-width: unset;
+		width: auto;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	@media (max-width: remy(991)) {
+		
+		padding-left: remy(10);
+		padding-right: remy(10);
+	}
+	
+}
+*[tab-body]{
+	display: none;
+	&.active{
+		display: block;
+	}
+}

@@ -1,0 +1,55 @@
+@import "var.scss";
+/*============= MENU gamburger ICON ==========*/
+.menu-toggle {
+	z-index: 5;
+	display: none;
+	width: 1.875rem;
+	height: 1.125rem;
+	position: relative;
+	@media (max-width: remy(991)) {
+		display: block;
+	}
+}
+
+.menu-toggle span,
+.menu-toggle::before,
+.menu-toggle::after {
+	right: 0;
+	width: 100%;
+	content: "";
+	height: 0.125rem;
+	position: absolute;
+	-webkit-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	background-color: #333333;
+}
+
+.menu-toggle::before {
+	top: 0;
+}
+
+.menu-toggle::after {
+	bottom: 0;
+}
+
+.menu-toggle span {
+	top: calc(50% - 0.0625rem);
+}
+
+.menu-toggle.active span {
+	width: 0;
+}
+
+.menu-toggle.active::before {
+	top: calc(50% - 0.0625rem);
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.menu-toggle.active::after {
+	bottom: calc(50% - 0.0625rem);
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}

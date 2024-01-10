@@ -1,0 +1,64 @@
+@import "../base/var.scss";
+.payment-table{
+	.payment-table__row.payment-table__header{
+		 color: rgba(51, 51, 51, 0.40);
+		 padding-top: 0;
+		 padding-bottom: 0;
+		 font-size: 1rem;
+		border-bottom: 0;
+		@media(max-width:remy(767)) {
+			display: none;
+		}
+	}
+   .payment-table__body{
+	height: calc(100vh - 16.5rem);
+	@media (max-width: remy(1199)) {
+		height: auto;
+		max-height: calc(100vh - 16.5rem);
+	}
+	@media (max-width: remy(767)) {
+		
+		max-height: unset;
+	}
+	
+   }
+	.payment-table__row{
+		display: flex;
+		padding: remy(12) remy(16) remy(12) 0;
+		border-bottom: 1px solid  #F2F2F2;
+		font-size: remy(14);
+		color: black;
+		align-items: center;
+		column-gap:remy(12);
+		@media(max-width:remy(767)){
+			flex-wrap:wrap;
+			
+			[class^="cell-"]{
+				width: 100%;
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+			.cell-date,
+			.cell-summ {
+				width: calc(48% - remy(12));
+			}
+			.cell-date{order:1}
+			.cell-summ{order:2}
+			.cell-payer{order: 3}
+			.cell-name {order: 4}
+		}
+		@media(max-width:remy(767)){
+			padding: remy(12) 0;
+		}
+	}
+	.cell-date{width: remy(54); margin-right: remy(20)}
+	.cell-payer{width:remy(131);}
+	.cell-summ{
+			width: remy(75);
+			text-align: right;
+		}
+	.cell-date, .cell-payer,  .cell-summ{
+		flex-shrink:0;
+	}
+	.cell-name{flex-grow:1}
+}

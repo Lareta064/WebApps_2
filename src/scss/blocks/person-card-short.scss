@@ -1,0 +1,36 @@
+@import "../base/var.scss";
+.person-short{
+	display: grid;
+	grid-template-columns: remy(100) 1fr;
+	gap:remy(20);
+	align-items: center;
+	padding: remy(34) remy(20) remy(44);
+	border-radius: 20px;
+	background: #FFF;
+	box-shadow: 0px 0px 8px 4px rgba(151, 151, 151, 0.10);
+	.id-card{
+		flex-grow:1;
+		padding: 0;
+		.title-small{font-size: remy(20);padding-right: remy(16);}
+		border-bottom:0;
+	}
+	.id-card__state{top:5px; right:0;}
+	@media (max-width: remy(767)) {padding: remy(24);}
+	@media (max-width: remy(574)) {
+		
+		display: grid;
+		grid-template-columns: 1fr ;
+	}
+}
+.person-short__photo{
+	width: remy(100);
+	height: remy(100);
+	margin: 0 auto;
+	flex-shrink: 0;
+	img{
+		width: 100%;
+		aspect-ratio: 1/1;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+}
