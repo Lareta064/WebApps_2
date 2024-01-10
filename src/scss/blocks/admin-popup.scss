@@ -1,0 +1,37 @@
+@import "../base/var.scss";
+.person-pass .eye-icon{
+	position: absolute;
+	z-index: 2;
+	right: remy(8);
+	top: remy(12);
+}
+.add-admin{
+	
+	.modal-frame{width:100%; max-width: remy(510);}
+	.add-admin-form{&>*+*{margin-top: remy(18);}}
+		
+		
+
+.form-footer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: remy(24);
+	margin-top: remy(24);
+	}
+	.form-item.person-role{
+		width: 49%;
+		z-index: 4;
+		@media (max-width: remy(767)) {
+			width: 100%;
+			max-width: remy(286);
+	
+		}
+	}
+	.form-item.person-pass .form-item__row{
+		column-gap: remy(16);
+		
+	}
+	
+}

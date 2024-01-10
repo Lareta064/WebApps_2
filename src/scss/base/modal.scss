@@ -27,12 +27,10 @@
 	overflow-y: auto;
 	display: flex;
 	justify-content: center;
-	padding-top: remy(85);
-	padding-bottom: remy(85);
-	@media (max-width: remy(1199)) {
-		padding-top: remy(50);
-		padding-bottom: remy(50);
-	}
+	align-items: flex-start;
+	padding-top: remy(50);
+	padding-bottom: remy(50);
+	
 	@media (max-width: remy(767)) {
 		padding-top: remy(30);
 		padding-bottom: remy(30);
@@ -87,5 +85,22 @@
 	width: auto;
 	min-width: remy(370);
 	height: auto;
+	@media(max-width:remy(399)){
+		min-width: 100%;
+		padding: remy(16);
+	}
 	
+}
+.modal-header__flex{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: remy(27);
+	&>*{margin-bottom: 0!important;}
+	.icon-close{
+		position: relative;
+		right: auto!important; top: auto!important;
+		background-size: remy(28);
+	}
+
 }

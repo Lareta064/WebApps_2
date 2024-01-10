@@ -4,6 +4,10 @@
 	font-size: 28px;
 	font-weight: 600;
 	line-height: 1;
+	@media (max-width: remy(767)) {
+		font-size: remy(24);
+
+	}
 }
 .title{
 	font-weight: 500;

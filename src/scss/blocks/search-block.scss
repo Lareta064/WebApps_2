@@ -38,3 +38,22 @@
 		max-width: remy(560);
 	}
 }
+.drop-filter.search-block{
+	.custom-drop__val input{
+		background-color: #f3f3f3;
+	}
+	
+	.custom-drop__val input + .search-btn{
+		display: none;
+	}
+	.custom-drop__val input:focus +.search-btn {
+		display:block;
+	}
+	
+	.custom-drop__val input ~.custom-drop__icon {
+		display: block;
+	}
+	.custom-drop__val input:focus~.custom-drop__icon {
+		display: none;
+	}
+}

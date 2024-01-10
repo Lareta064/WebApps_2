@@ -45,15 +45,17 @@ block content
 			+pagination
 
 	//================= ADD ADMIN ==================
-	.modal-frame-wrapper.visible(frame-modal="add-admin")
-		.modal-frame
-			.icon-close(frame-close)
-			.title Администратор
+	.modal-frame-wrapper.add-admin.visible(frame-modal="add-admin")
+		.modal-frame.modal-frame--small
+			.modal-header__flex
+				.head Добавить администратора
+				.icon-close(frame-close)
+			
 			.modal-frame__body
-				form.add-admin(action="")
+				form.add-admin-form(action="")
 					.form-item
 						label.label ФИО
-						input(type="text" placeholder="Иванов Иван Иванович" name="name")
+						input(type="text" placeholder="Иванов Иван Иванович" name="name" autocomplete="off")
 					
 					.form-item
 						label.label Email*
@@ -63,7 +65,43 @@ block content
 						label.label Номер телефона
 						input(type="email" placeholder="+7 (999) 999 99 99" name="phone")
 					
-					.person-role							
+					.form-item.person-role
+						label.label Статус
+						+custom-drop('Администратор', ['Администратор', 'Читатель','Редактор'], 'search-btn')
+					
+					.form-item.person-region
+						label.label Регион
+						//=========SEARCH REGION ===========
+						.drop-filter.search-block
+							.custom-drop
+								.custom-drop__val
+									input(type="text" name="")
+									
+									button.search-btn
+									
+									//====icon chevron =====
+									span.custom-drop__icon
+							
+								//=====drop list =======
+								.custom-drop__list
+									ul
+										li.custom-drop__item
+											p Саратовская область
+										li.custom-drop__item
+											p Самарская область
+					
+					.form-item.person-pass
+						label.label Пароль
+						.form-item__row
+							.form-item
+								input(type="text")
+								span.eye-icon
+							button.btn(type="button") Сгенерировать
+					
+					.form-footer
+						p * Необязательные поля
+						button.btn(type="submit") Добавить
+						.txt-grey ID присваивается автоматически
 
 block variables
 	-var title = "Администраторы";

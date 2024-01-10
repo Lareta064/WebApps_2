@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function (){
 				itemDrop.addEventListener('click', function (e) {
 				e.stopPropagation();
 				const selectItemText = e.target.textContent;
-				itemSelect.querySelector('input').setAttribute('value', selectItemText);
+				itemSelect.querySelector('input').value = selectItemText;
 				item.classList.remove('active');
 				});
 		   }

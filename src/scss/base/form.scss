@@ -49,7 +49,7 @@ select:-webkit-autofill:focus {
 .form-item .label{
   display: block;
   font-weight: 600;
-  margin-bottom:remy(12);
+  margin-bottom:remy(9);
 }
 .form-item__row{
   display: flex;
@@ -105,4 +105,33 @@ select:-webkit-autofill:focus {
   background-position: center remy(-30);
   background-size: remy(9);
   transition: .3s;
+}
+
+  .modal-frame.modal-frame--small {
+    padding: remy(28);
+
+
+  .head {
+    margin-bottom: remy(27);
+   
+  }
+
+  .sub-text {
+    max-width: remy(208);
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .form-btn {
+    margin-top: remy(24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+      width: fit-content;
+      height: remy(48);
+      line-height: remy(44);
+    }
+  }
 }
