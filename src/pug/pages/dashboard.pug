@@ -1,0 +1,103 @@
+extends ../layouts/layout.pug
+
+block content
+	+header([
+		{name: 'Мониторинг', link: 'index.html'},
+		{name: 'Задачи', link: 'tasks-page.html'},
+		{name: 'Платежи',link: 'payments-page.html'},
+		{name: 'Аналитика',link: 'analytics-page.html', active: 'true'},
+		{name: 'Чат', label:'3',link: 'chat-page.html'},
+		{name: 'Исполнители',link:'contractors-page.html'},
+		{name: 'Заказчики',link:'customer.html'}
+	])
+
+	main.dashboard.d-flex
+		.container.px-0
+			.tabs
+				.tabs-menu
+					nav
+						button.tabs-menu__item.active(tab-btn="1") Рейтинг
+						button.tabs-menu__item(tab-btn="2") Заказы
+						button.tabs-menu__item(tab-btn="3") Финансы
+								
+				.persone-analytics.grid
+					//======= Рейтинг==========
+					.persone-rating.grid__column.active(tab-body="1")
+					//- 	.title Рейтинг исполнителей
+					//- 	.filters-group
+					//- 		+search-block('', '','','', 'Поиск...')
+					//- 		+custom-drop('Сортировать', ['Сортировать', 'возрастанию', 'убыванию'])(class="drop-filter--sort")
+					//- 	.persone-list
+					//- 		+person-list-item
+					//- 		+person-list-item
+					//- 		+person-list-item
+					//- 		+person-list-item
+					//- 		+person-list-item
+						
+					//- 	.grid__column__footer
+					//- 		+pagination
+					
+					//======= ЗАКАЗЫ ==========
+					.dashboard-productivity.grid__column(tab-body="2")
+						.title Производительность
+						
+						.productivity-card
+							+circle-progress-big(70)
+							
+							.dotter-list
+								+dotter-li('Заказов опубликовано: ', '34')
+								+dotter-li('Успешно выполнено:', '20')
+								+dotter-li('В работе: ', '12')
+								+dotter-li('Заказы без исполнителя: ', '2')
+								+dotter-li('Фактическая прибыль: ', '1.200.600₽')
+								+dotter-li('Заказы без исполнителя: ', '2')
+								+dotter-li('Потенциальная прибыль:', '2.200.600₽')
+
+						//====карточка с диаграммой =====
+						.diagram-card.border-shadow
+							.title-medium.change-item KPI: #[span.txt-accent 4,9 ] #[span.change-up +12%] 
+							.filters-group
+								+custom-drop('Неделя', ['Год', 'Месяц', 'Квартал'])(class="drop-filter--small")
+
+							.diagram-card__chart
+								.chart-label
+									p 10034 заказов выполнено
+									span 02 окт. - 2 ноя.
+
+								img(src="./img/chart.webp", alt="alt")
+			
+					
+					//======= Аналитика ==========
+					.dashboard-analytic.grid__column(tab-body="3")
+						.title Аналитика
+						+custom-drop('Саратовская обл.', ['Саратовская обл.', 'Самарская обл.', 'Волгоградская обл.','Московская обл'])(class="drop-filter--small")
+											
+						//====карточка с диаграммой =====
+						.diagram-card.border-shadow
+							.title-small.change-item Количество заказов #[span.txt-accent 104] #[span.change-down -12%] 
+							.filters-group
+								+custom-drop('Неделя', ['Год', 'Месяц', 'Квартал'])(class="drop-filter--small")
+
+							.diagram-card__chart
+								.chart-label
+									p 32 заказа
+									span 04 ноя. - 5 ноя.
+
+								img(src="./img/chart.webp", alt="alt")
+						
+						
+						//====карточка с диаграммой =====
+						.diagram-card.border-shadow
+							.title-small.change-item Прибыль: #[span.txt-accent 1.500.200 ₽] #[span.change-up +12%]
+							.filters-group
+								+custom-drop('Неделя', ['Год', 'Месяц', 'Квартал'])(class="drop-filter--small")
+
+							.diagram-card__chart
+								.chart-label
+									p 10034 заказов выполнено
+									span 02 окт. - 2 ноя.
+
+								img(src="./img/chart.webp", alt="alt")
+
+block variables
+	-var title = "Аналитика";

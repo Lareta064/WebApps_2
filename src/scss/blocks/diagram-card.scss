@@ -1,0 +1,45 @@
+@import "../base/var.scss";
+.diagram-card__chart {
+	position: relative;
+
+}
+
+.diagram-card {
+	
+	@media(max-width:remy(574)) {
+		margin-left: remy(-8);
+		margin-right: remy(-8);
+	}
+}
+.change-up{
+	color: $green;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	
+	&:before {
+		content: '';
+		width: remy(22);
+		height: remy(22);
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3e%3cpath d='M11 3.66658L11 18.3333M11 18.3333L16.5 12.8333M11 18.3333L5.5 12.8333' stroke='%2300E131' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+		transform: rotate(180deg);
+	}
+}
+.change-item{
+	display: flex;
+	align-items: center;
+	gap: remy(8);
+}
+.change-down{
+	color: $red;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	
+	&:before{
+		content: '';
+		width: remy(22);
+		height: remy(22);
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3e%3cpath d='M11 3.66658L11 18.3333M11 18.3333L16.5 12.8333M11 18.3333L5.5 12.8333' stroke='%23FF5811' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+	}
+}

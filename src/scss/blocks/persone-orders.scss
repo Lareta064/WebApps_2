@@ -45,16 +45,7 @@
 	display: inline-block;
 	margin-top: remy(12);
 }
-.diagram-card__chart{
-	position: relative;
-	
-}
-.diagram-card{
-	@media(max-width:remy(574)){
-		margin-left: remy(-8);
-		margin-right: remy(-8);
-	}
-}
+
 .persone-orders{
 	.task-progress{
 		font-size: 1rem;
