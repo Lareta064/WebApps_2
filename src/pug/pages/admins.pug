@@ -18,7 +18,7 @@ block content
 				+custom-drop('Сортировать', ['Сортировать', 'от А-Я', 'от Я-А'])(class="drop-filter--sort")
 				
 				.admins-btn
-					button.btn Добавить Администратора
+					button.btn(frame-btn="add-admin") Добавить Администратора
 			//====контент с карточками ========
 			
 			.persone-block.column-four
@@ -45,7 +45,7 @@ block content
 			+pagination
 
 	//================= ADD ADMIN ==================
-	.modal-frame-wrapper.add-admin.visible(frame-modal="add-admin")
+	.modal-frame-wrapper.add-admin(frame-modal="add-admin")
 		.modal-frame.modal-frame--small
 			.modal-header__flex
 				.head Добавить администратора
