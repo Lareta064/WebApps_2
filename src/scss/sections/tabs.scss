@@ -41,6 +41,7 @@
 }
 .tabs-menu{
 	width: fit-content;
+	max-width: 100%;
 	z-index: 3;
 	@media (max-width: remy(767)) {
 		overflow: hidden;
