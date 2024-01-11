@@ -28,12 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 								content.classList.add('active');
 							}
 						}
-						/**********если кликаем по карте********** */
-						if (e.target.textContent == 'Карта') {
-							tabOptions.classList.add('hide');
-						} else {
-							tabOptions.classList.remove('hide');
-						}
+						
 					}
 				});
 			}

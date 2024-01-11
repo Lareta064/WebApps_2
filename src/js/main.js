@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function (){
 			const tabOptions = item.querySelector('.tabs-body__options');
 			if (itemBtns.length > 0 || itemContents.length > 0){
 				item.addEventListener('click', function(e){
-					// e.stopPropagation();
+					e.stopPropagation();
 					if(e.target.hasAttribute('tab-btn')){
 						for (let btn of itemBtns){
 							btn.classList.remove('active');
@@ -45,12 +45,7 @@ document.addEventListener("DOMContentLoaded", function (){
 								content.classList.add('active');
 							}
 						}
-						/**********если кликаем по карте********** */
-						if(e.target.textContent == 'Карта'){
-							tabOptions.classList.add('hide');
-						}else{
-							tabOptions.classList.remove('hide');
-						}
+						
 					}
 				});
 			}

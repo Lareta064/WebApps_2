@@ -2,47 +2,174 @@ extends ../layouts/layout.pug
 
 block content
 	+header([
-		{name: 'Мониторинг', link: 'index.html'},
-		{name: 'Задачи', link: 'tasks-page.html'},
-		{name: 'Платежи',link: 'payments-page.html'},
-		{name: 'Аналитика',link: 'analytics-page.html', active: 'true'},
-		{name: 'Чат', label:'3',link: 'chat-page.html'},
-		{name: 'Исполнители',link:'contractors-page.html'},
-		{name: 'Заказчики',link:'customer.html'}
+		{name: 'Приборная панель', link: 'dashboard.html'},
+		{name: 'Администраторы', link: 'admins.html', active:'true'},
+		{name: 'Заказы',link: 'orders.html'},
+		{name: 'Аналитика',link: 'analytics.html'},
+		{name: 'Связь', link: 'connection.html'},
+		{name: 'Техподдержка', link:'support.html'}
 	])
 
 	main.dashboard.d-flex
 		.container.px-0
 			.tabs
-				.tabs-menu
+				.tabs-menu.tabs-menu--mobile
 					nav
-						button.tabs-menu__item.active(tab-btn="1") Рейтинг
-						button.tabs-menu__item(tab-btn="2") Заказы
-						button.tabs-menu__item(tab-btn="3") Финансы
+						button.tabs-menu__item.active(tab-btn="1") Заказы
+						button.tabs-menu__item(tab-btn="2") Производительность
+						button.tabs-menu__item(tab-btn="3") Аналитика
 								
-				.persone-analytics.grid
+				.dashboard-content.grid
 					//======= Рейтинг==========
-					.persone-rating.grid__column.active(tab-body="1")
-					//- 	.title Рейтинг исполнителей
-					//- 	.filters-group
-					//- 		+search-block('', '','','', 'Поиск...')
-					//- 		+custom-drop('Сортировать', ['Сортировать', 'возрастанию', 'убыванию'])(class="drop-filter--sort")
-					//- 	.persone-list
-					//- 		+person-list-item
-					//- 		+person-list-item
-					//- 		+person-list-item
-					//- 		+person-list-item
-					//- 		+person-list-item
+					.dashboard-orders.grid__column.active.tabs(tab-body="1")
+						.flex-wrapper
+							.title Заказы
+							a(href="#!").flex-link Перейти в заказы #[span.right-icon]
 						
-					//- 	.grid__column__footer
-					//- 		+pagination
+						.tabs-menu
+							nav
+								button.tabs-menu__item.active(tab-btn="current") Текущие
+								button.tabs-menu__item(tab-btn="paused") Отложенные
+								button.tabs-menu__item(tab-btn="completed") Завершенные
+						
+						.filters-group
+							+custom-drop('Сначала просроченные', ['Сначала просроченные', 'Сначала старые', 'Сначала новые'])(class="drop-filter--small")
+						
+						.scroll-left
+							//===================== ТЕКУЩИЕ =================
+							.dashboard-orders__list.active(tab-body="current")
+								//======= задача просроченная ==========
+								.order-card.order-overdue
+									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+									
+									.order-card__overdue
+										p Просрочен 2 дня 17ч. назад
+									.order-card__footer
+										button(type="button").btn Завершить
+										button(type="button").flex-link.flex-link--red
+											span.cross-icon
+											span Отменить
+								
+								//======= задача просроченная ==========
+								.order-card.order-overdue
+									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+									
+									.order-card__overdue
+										p Просрочен 2 дня 17ч. назад
+									.order-card__footer
+										button(type="button").btn Завершить
+										button(type="button").flex-link.flex-link--red
+											span.cross-icon
+											span Отменить																	
+								//======= задача просроченная ==========
+								.order-card.order-overdue
+									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+									
+									.order-card__overdue
+										p Просрочен 2 дня 17ч. назад
+									.order-card__footer
+										button(type="button").btn Завершить
+										button(type="button").flex-link.flex-link--red
+											span.cross-icon
+											span Отменить							
+								
+								//======= задача текущая ==========
+								.order-card
+									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+									.order-card__date
+										p Дата начало: #[span 08.10.23] в #[span 09:00]
+										p Дата окончания: #[span 18.10.23] в #[span 19:00]
+									
+									.order-card__footer
+										button(type="button").btn Завершить
+										button(type="button").flex-link.flex-link--red 
+											span.cross-icon
+											span Отменить
+								
+							
+							//=============== ОТЛОЖЕННЫЕ ==============================
+							.dashboard-orders__list(tab-body="paused")
+								//======= задача отложенная ==========
+								.order-card
+									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+									.order-card__date
+										p Дата начало: #[span 08.10.23] в #[span 09:00]
+										p Дата окончания: #[span 18.10.23] в #[span 19:00]
+									
+									.order-card__footer
+										button(type="button").btn Активировать
+										button(type="button").flex-link.flex-link--red 
+											span.cross-icon
+											span Отменить
+								//======= задача отложенная ==========
+								.order-card
+									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+									.order-card__date
+										p Дата начало: #[span 08.10.23] в #[span 09:00]
+										p Дата окончания: #[span 18.10.23] в #[span 19:00]
+									
+									.order-card__footer
+										button(type="button").btn Активировать
+										button(type="button").flex-link.flex-link--red 
+											span.cross-icon
+											span Отменить
+								//======= задача отложенная ==========
+								.order-card
+									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+									.order-card__date
+										p Дата начало: #[span 08.10.23] в #[span 09:00]
+										p Дата окончания: #[span 18.10.23] в #[span 19:00]
+									
+									.order-card__footer
+										button(type="button").btn Активировать
+										button(type="button").flex-link.flex-link--red 
+											span.cross-icon
+											span Отменить
+
+
+							
+							//=============== ЗАВЕРШЕННЫЕ ==========================
+							.dashboard-orders__list(tab-body="completed")
+
+								//======= завершенный заказ=======
+								.order-card.order-complete
+									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+									.order-card__complete
+										p Завершён 12.08.23, выполнен за 3 дн. 14 ч., прибыль 12.000₽
+									
+									.order-card__footer
+										button(type="button").flex-link
+											span Подробнее
+											span.right-icon
+								
+								//======= завершенный заказ=======
+								.order-card.order-complete
+									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+									.order-card__complete
+										p Завершён 12.08.23, выполнен за 3 дн. 14 ч., прибыль 12.000₽
+									
+									.order-card__footer
+										button(type="button").flex-link
+											span Подробнее
+											span.right-icon
+								
+								//======= завершенный заказ=======
+								.order-card.order-complete
+									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+									.order-card__complete
+										p Завершён 12.08.23, выполнен за 3 дн. 14 ч., прибыль 12.000₽
+									
+									.order-card__footer
+										button(type="button").flex-link
+											span Подробнее
+											span.right-icon
 					
-					//======= ЗАКАЗЫ ==========
+					//======= КОЛОНКА ЗАКАЗЫ ==========
 					.dashboard-productivity.grid__column(tab-body="2")
 						.title Производительность
 						
 						.productivity-card
-							+circle-progress-big(70)
+							+circle-progress-big(80)
 							
 							.dotter-list
 								+dotter-li('Заказов опубликовано: ', '34')
