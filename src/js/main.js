@@ -24,33 +24,31 @@ document.addEventListener("DOMContentLoaded", function (){
 		for (let item of parentArr) {
 			const itemBtns = item.querySelectorAll(btnCl);
 			const itemContents = item.querySelectorAll(contentCl);
-			if (itemBtns.length > 0 || itemContents.length > 0) {
+			if (itemBtns.length <= 0 || itemContents.length <= 0) return ;
 				
-				for (let itBtn of itemBtns){
-					itBtn.addEventListener('click', function (e) {
+			for (let itBtn of itemBtns){
+				itBtn.addEventListener('click', function (e) {
 					e.stopPropagation();
-					if (e.target.hasAttribute('tab-btn')) {
-						for (let btn of itemBtns) {
-							btn.classList.remove('active');
+					if (!e.target.hasAttribute('tab-btn')) return ;
+					for (let btn of itemBtns) {
+						btn.classList.remove('active');
+					}
+					e.target.classList.add('active');
+
+					const btnData = e.target.getAttribute('tab-btn');
+
+					for (let content of itemContents) {
+
+						content.classList.remove('active');
+
+						const contentData = content.getAttribute('tab-body');
+						if (contentData == btnData) {
+							content.classList.add('active');
 						}
-						e.target.classList.add('active');
-
-						const btnData = e.target.getAttribute('tab-btn');
-
-						for (let content of itemContents) {
-
-							content.classList.remove('active');
-
-							const contentData = content.getAttribute('tab-body');
-							if (contentData == btnData) {
-								content.classList.add('active');
-							}
-						}
-
 					}
 				});
-			 }
 			}
+			
 		}
 	}
 	if (tabs.length >0){
