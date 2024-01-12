@@ -15,7 +15,7 @@ block content
 			
 			.aside-grid
 				//=====левая колонка ====
-				.aside-grid__sidebar
+				.aside-grid__sidebar.border-shadow
 					.filters-group
 						+search-block('', '','','', 'Название задачи')
 		
@@ -74,23 +74,9 @@ block content
 												span Выполненные
 				//====основной контент ======
 				.aside-grid__content
-					.regions-block.border-shadow
-						.title Регионы
-						.regions-map
-							img(src="./img/map-layot.webp", alt="map")
-						.regions-zone
-							.regions-zone__item
-								span Регион на карте 1
-							.regions-zone__item
-								span Регион на карте 2
-							.regions-zone__item
-								span Регион на карте 3
-							.regions-zone__item
-								span Регион на карте 4
-							.regions-zone__item
-								span Регион на карте 5
-							.regions-zone__item
-								span Регион на карте 6
+					.map.border-shadow
+						.map
+							script(type='text/javascript' charset='utf-8' async='' src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A13e02d731c04b56220a2a064d1fa54db38ac5402f907fd4bdf75e632a107fa8e&width=100%&height=100%&lang=ru_RU&scroll=true')
 							
 block variables
 	-var title = "Страница Заказчика";

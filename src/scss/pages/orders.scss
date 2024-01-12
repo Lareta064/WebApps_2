@@ -1,4 +1,9 @@
 @import "../base/var.scss";
+.orders .aside-grid__sidebar{
+	@media(min-width:remy(1200)){
+		width: remy(456)
+	}
+}
 .orders-list{
 	
 	& *{direction: ltr;}
@@ -53,4 +58,8 @@
 	.legend-form-item +.legend-form-item{
 		margin-top:remy(10) ;
 	}
+}
+.map{
+	width: 100%;
+	height: 100%;
 }
