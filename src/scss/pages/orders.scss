@@ -1,1 +1,56 @@
 @import "../base/var.scss";
+.orders-list{
+	
+	& *{direction: ltr;}
+	max-height: remy(520);
+	margin-left: remy(-12);
+	padding-left: remy(8);
+	@media(max-width: remy(1199)){
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: remy(14);
+		.order-card +.order-card{
+			margin-top: 0;
+		}
+		scrollbar-width: none;
+		&::-webkit-scrollbar{display: none;}
+		margin-left: 0;
+	}
+	@media(max-width: remy(991)) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: remy(14);
+
+		.order-card+.order-card {
+			margin-top: 0;
+		}
+	}
+	@media(max-width: remy(767)) {
+		display: grid;
+		grid-template-columns:1fr;
+		gap: remy(14);
+
+		.order-card+.order-card {
+			margin-top: 0;
+		}
+	}
+}
+.aside-grid__sidebar .orders-aside{
+	margin-top: 0;
+}
+.orders-legend{margin-top: remy(16);}
+.legend-form{
+	.legend-form-item{
+		display: flex;
+		align-items: center;
+		column-gap: remy(12);
+		cursor: pointer;
+		font-weight: 500;
+	}
+	.legend-form-item input[type="checkbox"]{
+		appearance: auto;
+	}
+	.legend-form-item +.legend-form-item{
+		margin-top:remy(10) ;
+	}
+}

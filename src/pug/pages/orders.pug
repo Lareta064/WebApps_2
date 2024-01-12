@@ -50,22 +50,28 @@ block content
 								.order-card__date
 									p Дата начало: #[span 08.10.23] в #[span 09:00]
 									p Дата окончания: #[span 18.10.23] в #[span 19:00]
-				
+
+						//========== ЛЕГЕНДА =============
 						.orders-legend
 							.accordion.border-shadow
 								label.accordion-item(for="legend")
 									.accordion-btn
 										.title-medium Легенда
-									input.accordion-input(type="checkbox" id="legend" name="accordion-item")
+									input.accordion-input(type="checkbox" checked  id="legend" name="accordion-item")
 									span.accordion-icon
 									
 									//====== accordion-body ======
 									.accordion-body
-										h3 dfdfdf
-										h3 dfdfdf
-										h3 dfdfdf
-				
-				
+										.legend-form
+											label.legend-form-item
+												input(type="checkbox" name="ordersCurrent")
+												span Текущие
+											label.legend-form-item
+												input(type="checkbox" name="ordersPending")
+												span Ожидающие
+											label.legend-form-item
+												input(type="checkbox" name="ordersCompleted")
+												span Выполненные
 				//====основной контент ======
 				.aside-grid__content
 					.regions-block.border-shadow
