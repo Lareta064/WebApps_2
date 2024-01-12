@@ -1,0 +1,35 @@
+@import "../base/var.scss";
+/*********************************/
+.accordion{
+	.accordion-body{
+		display: none;
+	}
+	.accordion-item{
+		position: relative;
+		.title-medium{
+			margin-bottom: 0;
+		}	
+	}
+	.accordion-icon{
+		width: 1rem;
+		height: 1rem;
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='13' height='7' viewBox='0 0 13 7' fill='none'%3e%3cpath d='M12.0413 1.125L6.49967 5.875L0.958008 1.125' stroke='%23007AFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+		background-size: contain;
+		position: absolute;
+		right: 0;
+		top: remy(3);
+		z-index: 2;
+		transition: .3s; 
+	}
+	.accordion-item input[type="checkbox"]{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0.01rem;
+		// display: none;
+	}
+	.accordion-item .accordion-input:checked ~ .accordion-body{
+		display: block;
+	}
+	.accordion-item .accordion-input:checked ~.accordion-icon{transform: rotate(180deg)}
+}

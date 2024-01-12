@@ -74,10 +74,12 @@
 @import "blocks/productiv-card.scss";
 @import "pages/dashboard.scss";
 
+
+
 // @import "pages/analytics-page.scss";
 
 
-// @import "base/grid-aside.scss";
+@import "base/grid-aside.scss";
 // @import "pages/single-contractor.scss";
 
 
@@ -86,6 +88,9 @@
 @import "blocks/admin-popup.scss";
 @import "pages/admins.scss";
 
+//===========orders===============//
+@import "sections/accordion.scss";
+@import "pages/orders.scss";
 // @import "blocks/authoriz-form.scss";
   //ui
 @import "ui/_ui-navigation";

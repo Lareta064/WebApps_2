@@ -1,0 +1,90 @@
+extends ../layouts/layout.pug
+
+block content
+	+header([
+		{name: 'Приборная панель', link: 'dashboard.html',},
+		{name: 'Администраторы', link: 'admins.html'},
+		{name: 'Заказы',link: 'orders.html', active:'true'},
+		{name: 'Аналитика',link: 'analytics.html'},
+		{name: 'Связь', link: 'connection.html'},
+		{name: 'Техподдержка', link:'support.html'}
+	])
+
+	main.orders
+		.container
+			
+			.aside-grid
+				//=====левая колонка ====
+				.aside-grid__sidebar
+					.filters-group
+						+search-block('', '','','', 'Название задачи')
+		
+						+custom-drop('Сортировать', ['Сортировать', 'Текущие', 'Просроченные','Отложенные'])(class="drop-filter--sort")
+					
+					.orders-aside
+						.orders-list.scroll-left
+							//======= задача текущая ==========
+							.order-card
+								.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+								.order-card__date
+									p Дата начало: #[span 08.10.23] в #[span 09:00]
+									p Дата окончания: #[span 18.10.23] в #[span 19:00]
+							
+							//======= задача текущая ==========
+							.order-card
+								.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+								.order-card__date
+									p Дата начало: #[span 08.10.23] в #[span 09:00]
+									p Дата окончания: #[span 18.10.23] в #[span 19:00]
+					
+							//======= задача текущая ==========
+							.order-card
+								.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+								.order-card__date
+									p Дата начало: #[span 08.10.23] в #[span 09:00]
+									p Дата окончания: #[span 18.10.23] в #[span 19:00]
+							
+							//======= задача текущая ==========
+							.order-card
+								.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
+								.order-card__date
+									p Дата начало: #[span 08.10.23] в #[span 09:00]
+									p Дата окончания: #[span 18.10.23] в #[span 19:00]
+				
+						.orders-legend
+							.accordion.border-shadow
+								label.accordion-item(for="legend")
+									.accordion-btn
+										.title-medium Легенда
+									input.accordion-input(type="checkbox" id="legend" name="accordion-item")
+									span.accordion-icon
+									
+									//====== accordion-body ======
+									.accordion-body
+										h3 dfdfdf
+										h3 dfdfdf
+										h3 dfdfdf
+				
+				
+				//====основной контент ======
+				.aside-grid__content
+					.regions-block.border-shadow
+						.title Регионы
+						.regions-map
+							img(src="./img/map-layot.webp", alt="map")
+						.regions-zone
+							.regions-zone__item
+								span Регион на карте 1
+							.regions-zone__item
+								span Регион на карте 2
+							.regions-zone__item
+								span Регион на карте 3
+							.regions-zone__item
+								span Регион на карте 4
+							.regions-zone__item
+								span Регион на карте 5
+							.regions-zone__item
+								span Регион на карте 6
+							
+block variables
+	-var title = "Страница Заказчика";
