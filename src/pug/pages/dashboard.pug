@@ -2,8 +2,8 @@ extends ../layouts/layout.pug
 
 block content
 	+header([
-		{name: 'Приборная панель', link: 'dashboard.html'},
-		{name: 'Администраторы', link: 'admins.html', active:'true'},
+		{name: 'Приборная панель', link: 'dashboard.html', active:'true'},
+		{name: 'Администраторы', link: 'admins.html'},
 		{name: 'Заказы',link: 'orders.html'},
 		{name: 'Аналитика',link: 'analytics.html'},
 		{name: 'Связь', link: 'connection.html'},
@@ -15,29 +15,34 @@ block content
 			.tabs
 				.tabs-menu.tabs-menu--mobile
 					nav
-						button.tabs-menu__item.active(tab-btn="1") Заказы
-						button.tabs-menu__item(tab-btn="2") Производительность
-						button.tabs-menu__item(tab-btn="3") Аналитика
+						button.tabs-menu__item.active.tabs-btn(tab-btn="1") Заказы
+						button.tabs-menu__item.tabs-btn(tab-btn="2") Производительность
+						button.tabs-menu__item.tabs-btn(tab-btn="3") Аналитика
+				script.
+					const tabs = document.querySelectorAll('.tabs');
+					for(item of tabs){
+						const itemBtns = item.querySelectorAll('.tabs-btn')
+					}
 								
 				.dashboard-content.grid
 					//======= Рейтинг==========
-					.dashboard-orders.grid__column.active.tabs(tab-body="1")
+					.dashboard-orders.grid__column.active.tabs-inner.tabs-body(tab-body="1")
 						.flex-wrapper
 							.title Заказы
 							a(href="#!").flex-link Перейти в заказы #[span.right-icon]
 						
 						.tabs-menu
 							nav
-								button.tabs-menu__item.active(tab-btn="current") Текущие
-								button.tabs-menu__item(tab-btn="paused") Отложенные
-								button.tabs-menu__item(tab-btn="completed") Завершенные
+								button.tabs-menu__item.active.tabs-inner-btn(tab-btn="current") Текущие
+								button.tabs-menu__item.tabs-inner-btn(tab-btn="paused") Отложенные
+								button.tabs-menu__item.tabs-inner-btn(tab-btn="completed") Завершенные
 						
 						.filters-group
 							+custom-drop('Сначала просроченные', ['Сначала просроченные', 'Сначала старые', 'Сначала новые'])(class="drop-filter--small")
 						
 						.scroll-left
 							//===================== ТЕКУЩИЕ =================
-							.dashboard-orders__list.active(tab-body="current")
+							.dashboard-orders__list.active.tabs-inner-body(tab-body="current")
 								//======= задача просроченная ==========
 								.order-card.order-overdue
 									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
@@ -88,7 +93,7 @@ block content
 								
 							
 							//=============== ОТЛОЖЕННЫЕ ==============================
-							.dashboard-orders__list(tab-body="paused")
+							.dashboard-orders__list.tabs-inner-body(tab-body="paused")
 								//======= задача отложенная ==========
 								.order-card
 									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
@@ -129,7 +134,7 @@ block content
 
 							
 							//=============== ЗАВЕРШЕННЫЕ ==========================
-							.dashboard-orders__list(tab-body="completed")
+							.dashboard-orders__list.tabs-inner-body(tab-body="completed")
 
 								//======= завершенный заказ=======
 								.order-card.order-complete
@@ -165,7 +170,7 @@ block content
 											span.right-icon
 					
 					//======= КОЛОНКА ЗАКАЗЫ ==========
-					.dashboard-productivity.grid__column(tab-body="2")
+					.dashboard-productivity.grid__column.tabs-body(tab-body="2")
 						.title Производительность
 						
 						.productivity-card
@@ -195,7 +200,7 @@ block content
 			
 					
 					//======= Аналитика ==========
-					.dashboard-analytic.grid__column(tab-body="3")
+					.dashboard-analytic.grid__column.tabs-body(tab-body="3")
 						.title Аналитика
 						+custom-drop('Саратовская обл.', ['Саратовская обл.', 'Самарская обл.', 'Волгоградская обл.','Московская обл'])(class="drop-filter--small")
 											
