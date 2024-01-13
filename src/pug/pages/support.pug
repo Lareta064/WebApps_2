@@ -62,7 +62,7 @@ block content
 						
 		.support-content
 			.support-wrapper
-				.support-table
+				.support-table.scroll-right
 					.support-table-row.support-table__header
 						.cell-type  Тип события
 						.cell-date Дата и время
@@ -74,7 +74,18 @@ block content
 					+support-row('Сведение', 'Нормальный')
 					+support-row('Сведение', 'Нормальный')(class="active")
 					+support-row('Ошибка', 'Высокий')
-
+					+support-row('Ошибка', 'Высокий')
+					+support-row('Успех', 'Нормальный')
+					+support-row('Успех', 'Нормальный')
+					//- +support-row('Успех', 'Нормальный')
+					//- +support-row('Успех', 'Нормальный')
+					//- +support-row('Успех', 'Низкий')
+					//- +support-row('Успех', 'Нормальный')
+					//- +support-row('Успех', 'Высокий')
+					//- +support-row('Ошибка', 'Высокий')
+					//- +support-row('Успех', 'Нормальный')
+					//- +support-row('Успех', 'Нормальный')
+					//- +support-row('Успех', 'Нормальный')
 					.support-table-row
 						.cell-type
 							p Сведение
@@ -85,11 +96,19 @@ block content
 						.cell-level
 							p Нормальный
 						.cell-text
-							p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et. Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.
+							p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et. 
 				
-				.support-log
+				.support-meta.border-shadow
+					.dotter-list.border-shadow
+						+dotter-li('Код события:', '0x400800001')
+						+dotter-li('Тип события:', 'Ошибка')
+						+dotter-li('Субъект:','Lorem ipsum dolor.')
+						+dotter-li('Дата и время:', '20.05.23 в 23:20')
+						+dotter-li('Уровень важности:', 'Нормальный')
+					.support-meta__text
+						p SC: старт службы Lorem ipsum dolor sit провален.
 			.support-info
-
+				p В журнале Система на #[span 02.11.23 14:52:33]  #[span 57] событий, отображено #[span 57] из #[span 57]
 
 
 block variables
