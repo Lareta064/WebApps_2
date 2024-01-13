@@ -46,12 +46,12 @@ block content
 				ul
 					li
 						p Журналы аудита
-						input#1.subCat(type='checkbox' )
+						input#1.subCat(type='checkbox' checked)
 						label.chka(for='1')
 						ul(style='display:none')
 							li
 								p Системные журналы
-								input.subCat(type='checkbox' id='1.1')
+								input.subCat(type='checkbox'  id='1.1')
 								label.chka(for='1.1')
 								ul(style='display:none')
 									li
@@ -87,26 +87,16 @@ block content
 					+support-row('Ошибка', 'Высокий')
 					+support-row('Успех', 'Нормальный')
 					+support-row('Успех', 'Нормальный')
-					//- +support-row('Успех', 'Нормальный')
-					//- +support-row('Успех', 'Нормальный')
-					//- +support-row('Успех', 'Низкий')
-					//- +support-row('Успех', 'Нормальный')
-					//- +support-row('Успех', 'Высокий')
-					//- +support-row('Ошибка', 'Высокий')
-					//- +support-row('Успех', 'Нормальный')
-					//- +support-row('Успех', 'Нормальный')
-					//- +support-row('Успех', 'Нормальный')
-					.support-table-row
-						.cell-type
-							p Сведение
-						.cell-date
-							p 20.05.23 в 23:20
-						.cell-code
-							p 0x400800001
-						.cell-level
-							p Нормальный
-						.cell-text
-							p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et. 
+					+support-row('Успех', 'Нормальный')
+					+support-row('Успех', 'Нормальный')
+					+support-row('Успех', 'Низкий')
+					+support-row('Успех', 'Нормальный')
+					+support-row('Успех', 'Высокий')
+					+support-row('Ошибка', 'Высокий')
+					+support-row('Успех', 'Нормальный')
+					+support-row('Успех', 'Нормальный')
+					+support-row('Успех', 'Нормальный')
+					+support-row('Ошибка', 'Высокий')
 				
 				.support-meta.border-shadow
 					.dotter-list.border-shadow
