@@ -1,7 +1,29 @@
 @import "../base/var.scss";
+.support-aside__controls{
+	display: flex;
+	align-items: center;
+	column-gap: remy(8);
+	padding: remy(32) remy(20);
+	background-color: #fff;
+	padding-top: remy(12);
+	padding-bottom: remy(12);
+	border-bottom: 1px solid  #DEDEDE;
+}
+.reload-btn, .setting-btn{
+	width: remy(28);
+	height: remy(28);
+	background-color: #D3E8FE;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: remy(4);
+	border-radius: remy(4);
+}
 .vertmenu {
-	margin: 0 20px;
 	font-size: 1rem;
+	padding: remy(32) remy(20);
+	
 }
 
 .vertmenu ul {
