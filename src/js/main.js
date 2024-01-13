@@ -176,4 +176,15 @@ document.addEventListener("DOMContentLoaded", function (){
 			chatWindow.classList.remove('active');
 		})
 	}
+	const supportAside = document.querySelector('.support-aside');
+	if (supportAside){
+        console.log('123');
+		supportAside.querySelector('.support-aside__btn').addEventListener('click', function(){
+			console.log('555');
+			if (supportAside.classList.contains('active')){
+				supportAside.classList.remove('active');
+			}
+			else { supportAside.classList.add('active'); console.log('456'); }
+		})
+	}
 });

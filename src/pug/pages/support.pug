@@ -1,4 +1,21 @@
 extends ../layouts/layout.pug
+mixin support-row(type, level)
+	.support-table-row&attributes(attributes)
+		if type == 'Ошибка'
+			.cell-type.cell-type--wrong
+				p #{type}
+		else
+			.cell-type
+				p #{type}
+		.cell-date
+			p 20.05.23 в 23:20
+		.cell-code
+			p 0x400800001
+		.cell-level
+			p #{level}
+		.cell-text
+			p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.
+
 
 block content
 	+header([
@@ -12,6 +29,9 @@ block content
 
 	main.support
 		.support-aside
+			.support-aside__btn
+				.right-icon
+				.cross-icon 
 			.vertmenu
 				ul
 					li
@@ -50,6 +70,11 @@ block content
 						.cell-level Уровень важности
 						.cell-text Текст события
 
+					+support-row('Ошибка', 'Нормальный')
+					+support-row('Сведение', 'Нормальный')
+					+support-row('Сведение', 'Нормальный')(class="active")
+					+support-row('Ошибка', 'Высокий')
+
 					.support-table-row
 						.cell-type
 							p Сведение
@@ -60,7 +85,7 @@ block content
 						.cell-level
 							p Нормальный
 						.cell-text
-							p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.
+							p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et. Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.
 				
 				.support-log
 			.support-info
