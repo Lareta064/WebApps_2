@@ -97,7 +97,7 @@ block content
 			
 				//============ button Создать объявление  =============
 				.aside-footer.flex-center
-					button.btn(type="button") Создать объявление
+					button.btn(type="button" frame-btn="add-message") Создать объявление
 			//=======правая часть с сообщениями =====
 			.chat-window
 				
@@ -161,6 +161,35 @@ block content
 							
 							button(type="submit").create-message__send
 								.send-icon
+
+	//================= ADD MESSAGE ==================
+	.modal-frame-wrapper.add-message.visible(frame-modal="add-message")
+		.modal-frame.modal-frame--small
+			.modal-header__flex
+				.head Создать объявление
+				.icon-close(frame-close)
+			
+			.modal-frame__body
+				form.add-message-form(action="")
+					
+					.form-item__row
+						label.rel-label(for="role-contractor")
+							input.hide-input#role-contractor(type="radio" name="role-type" )
+							button.btn(type="button") Исполнители
+						
+						label.rel-label(for="role-admin")
+							input.hide-input#role-admin(type="radio" checked name="role-type" )
+							button.btn(type="button") Администраторы
+					
+					
+					+custom-drop('Выберете тип уведомления', ['Тип 1', 'Тип 2', 'Тип 3', 'Тип 4', 'Тип 5', 'Тип 6', 'Тип 7'])(class="bg-white")
+					
+					.form-item.form-item--white
+						input(type="text" placeholder="Напишите заголовок уведомления" name="subject")
+					.form-item.form-item--white
+						textarea(type="text" placeholder="Напишите текст уведомления" name="message")
+					.form-btn
+						button(type="submit" frame-close).btn Отправить
 
 block variables
 	-var title = "Задачи";

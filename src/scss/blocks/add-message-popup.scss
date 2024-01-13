@@ -1,0 +1,42 @@
+@import "../base/var.scss";
+input.hide-input~.btn {
+	background-color: $white;
+	border-color: $white;
+	box-shadow: 0px 0px 8px 4px rgba(151, 151, 151, 0.10);
+	color: $text;
+	pointer-events: none;
+}
+input.hide-input:checked~.btn {
+	background-color: $accent;
+	border-color: $accent;
+	box-shadow: none;
+	color: $white;
+}
+.add-message-form >*+*{
+	margin-top: 1rem;
+	.form-btn{margin-top: remy(24);}
+}
+.add-message-form .custom-drop__list ul{
+	max-height:11.5rem;
+}
+.modal-frame-wrapper.add-message{
+	align-items: center;
+}
+.add-message-form .form-item__row{
+	@media (max-width: remy(767)) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	
+}
+.add-message-form .rel-label .btn{
+	@media (max-width: remy(767)) {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	@media (max-width: remy(374)) {
+		padding-left: 1rem;
+		padding-right: 1rem;
+		font-size: remy(14);
+	}
+}

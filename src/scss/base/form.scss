@@ -135,3 +135,11 @@ select:-webkit-autofill:focus {
     }
   }
 }
+
+input.hide-input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.01rem;
+}
+label.rel-label{position: relative; display: block;}
