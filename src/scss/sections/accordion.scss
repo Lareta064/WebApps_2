@@ -6,6 +6,7 @@
 	}
 	.accordion-item{
 		position: relative;
+		display: block;
 		.title-medium{
 			margin-bottom: 0;
 		}	
@@ -22,7 +23,7 @@
 		z-index: 2;
 		transition: .3s; 
 	}
-	.accordion-input[type="checkbox"]{
+	input.accordion-input{
 		position: absolute;
 		top: 0;
 		left: 0;

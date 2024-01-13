@@ -162,5 +162,18 @@ document.addEventListener("DOMContentLoaded", function (){
 		//- Invoke update progress
 		updateProgress();
 	}
-
+	/*********************CHAT PAGE ***********************/
+	const chatContacts = document.querySelectorAll('.chat-contacts-item');
+	if (chatContacts.length > 0) {
+		const chatWindow = document.querySelector('.chat-window');
+		for (let item of chatContacts) {
+			item.addEventListener('click', function () {
+				chatWindow.classList.add('active');
+			});
+		}
+		chatWindow.querySelector('.back-icon').addEventListener('click', (e) => {
+			e.preventDefault();
+			chatWindow.classList.remove('active');
+		})
+	}
 });

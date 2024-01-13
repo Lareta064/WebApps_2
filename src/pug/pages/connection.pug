@@ -1,0 +1,166 @@
+extends ../layouts/layout.pug
+
+block content
+	+header([
+		{name: 'Приборная панель', link: 'dashboard.html'},
+		{name: 'Администраторы', link: 'admins.html'},
+		{name: 'Заказы',link: 'orders.html'},
+		{name: 'Аналитика',link: 'analytics.html'},
+		{name: 'Связь', link: 'connection.html', active:'true'},
+		{name: 'Техподдержка', link:'support.html'}
+	])
+
+	main.chat-page
+		.chat-page__content
+			//=======left contacts aside =======
+			.chat-page-aside.tabs.flex-column
+				//====== строка поиска ======
+				.chat-contacts__search
+					+search-block('',['Иванов Иван Иванович', 'Иванов Степан Иванович'], '', '','Поиск...')
+				
+				//==========  БЛОК С КОНТАКТАМИ ===========
+				.chat-contacts__wrapper.scroll-left
+					
+					//===аккордеон работает на чистом css  за счет состояния чекед у инпута с классом "accordion-input". Если задать ему тип 'checkbox' и разные значения атрибута name , то уже открытые блоки с контактами  закрываться не будут.  Сейчас стоит тип 'radio' и одинаковое значение name="contact-group" =====
+					
+					.chat-contacts.accordion
+						
+						//========== @Администраторы ==========
+						label.accordion-item.chat-contacts-item(for="admin")
+							.accordion-btn
+								.chat-contacts__top
+									.chat-contacts__name
+										p @Администраторы
+									.chat-time
+										p 16:27
+								
+								.chat-contacts__message
+									p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut
+
+								input.accordion-input(type="radio"  id="admin" name="contact-group")
+								
+								.accordion-body
+									+chat-contact-item('true','true')
+									+chat-contact-item('','', 'true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('true','true')
+						
+						//==========@Исполнители ==========
+						label.accordion-item.chat-contacts-item(for="contractors")
+							.accordion-btn
+								.chat-contacts__top
+									.chat-contacts__name
+										p  @Исполнители
+									.chat-time
+										p 16:27
+								
+								.chat-contacts__message
+									p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut
+
+								input.accordion-input(type="radio"   id="contractors" name="contact-group")
+								
+								.accordion-body
+									+chat-contact-item('true','true')
+									+chat-contact-item('','', 'true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('true','true')
+						
+						//========== @Все ==========
+						label.accordion-item.chat-contacts-item(for="all")
+							.accordion-btn
+								.chat-contacts__top
+									.chat-contacts__name
+										p  @Все
+									.chat-time
+										p 16:27
+								
+								.chat-contacts__message
+									p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut
+
+								input.accordion-input(type="radio" checked id="all" name="contact-group")
+								
+								.accordion-body
+									+chat-contact-item('true','true')
+									+chat-contact-item('','', 'true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('','', 'true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('true','true')
+									+chat-contact-item('true','true')
+
+					//============= Кнопка Добавить объявление   ======================
+			
+				//============ button Создать объявление  =============
+				.aside-footer.flex-center
+					button.btn(type="button") Создать объявление
+			//=======правая часть с сообщениями =====
+			.chat-window
+				
+				//======шапка =====
+				.chat-window__header
+					//=======кнопка НАЗАД для моб версии =====
+					button.back-icon
+					.chat-window__title
+						p @Исполнители
+				
+				//======Блок с сообщениями =====
+				.chat-window__messages.scroll-right
+
+					.chat-window__date 29.09.2023
+					
+					//==== ответные сообщения ======
+					.chat-window__responce
+						p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in
+						.chat-time
+							.chat-icon
+								.db-check
+							p 16:27
+					
+					.chat-window__responce
+						p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam inLorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam inLorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in
+						.chat-time
+							.chat-icon
+								.db-check
+							p 16:27
+					
+					.chat-window__date 30.09.2023
+					
+					.chat-window__responce
+						p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam inLorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam inLorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in
+						.chat-time
+							.chat-icon
+								.db-check
+							p 16:27
+					.chat-window__responce
+						p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam inLorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam inLorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in
+						.chat-time
+							.chat-icon
+								.db-check
+							p 16:27		
+				
+				//======Блок для создания сообщения =====
+				.chat-window__input
+					form.create-message
+						//====== прикрепить файл скрепка ======
+						.create-message__select
+							input#add-media.inputfile(type='file' )
+							label(for='add-media')
+								span.add-icon
+						
+						//==== поле ввода текста =====
+						.create-message__text
+							input.input-text(type="text")
+							
+							button(type="button").create-message__mic
+								.mic-icon
+							
+							button(type="submit").create-message__send
+								.send-icon
+
+block variables
+	-var title = "Задачи";
