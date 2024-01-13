@@ -1,0 +1,122 @@
+@import "../base/var.scss";
+.vertmenu {
+	margin: 0 20px;
+	font-size: 1rem;
+}
+
+.vertmenu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vertmenu ul li {
+	position: relative;
+	margin: 0;
+	line-height: 1;
+	margin-bottom: 14px;
+}
+
+.vertmenu ul li {
+	padding-left:remy(10);
+	position: relative;
+	p{
+		position: relative;
+		display: flex;
+		align-items: center;
+		column-gap:4px;
+		padding-left: 8px;
+		&:before{
+			content:'';
+			display: block;
+			width:17px;
+			height: 17px;
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17' viewBox='0 0 17 17' fill='none'%3e%3cpath opacity='0.5' d='M8.50033 14.1867V12.75H5.66699L5.66699 14.1867C5.66699 14.383 5.66699 14.4812 5.73418 14.5208C5.80137 14.5605 5.89326 14.5166 6.07704 14.4288L6.95695 14.0085C7.01913 13.9788 7.05022 13.9639 7.08366 13.9639C7.1171 13.9639 7.14819 13.9788 7.21037 14.0085L8.09028 14.4288C8.27406 14.5166 8.36595 14.5605 8.43314 14.5208C8.50033 14.4812 8.50033 14.383 8.50033 14.1867Z' fill='%23007AFF'/%3e%3cpath d='M5.66634 12.75H5.25974C4.49218 12.75 4.22384 12.7541 4.0182 12.7983C3.65454 12.8765 3.33841 13.044 3.10792 13.2704C3.03019 13.3467 2.99132 13.3849 2.90168 13.6281C2.81204 13.8714 2.82624 13.9745 2.85464 14.1809C2.85965 14.2173 2.86504 14.2528 2.87086 14.2875C2.94826 14.7495 3.08984 14.9941 3.307 15.1684C3.52415 15.3427 3.82903 15.4563 4.40477 15.5184C4.99744 15.5823 5.78293 15.5833 6.90919 15.5833H10.0477C11.1739 15.5833 11.9594 15.5823 12.5521 15.5184C13.1278 15.4563 13.4327 15.3427 13.6499 15.1684C13.867 14.9941 14.0086 14.7495 14.086 14.2875C14.151 13.8995 14.1638 13.4085 14.1663 12.75H8.49967V14.1867C8.49967 14.383 8.49967 14.4812 8.43249 14.5208C8.3653 14.5605 8.27341 14.5166 8.08963 14.4288L7.20972 14.0085C7.14754 13.9788 7.11645 13.9639 7.08301 13.9639C7.04957 13.9639 7.01848 13.9788 6.9563 14.0085L6.07638 14.4288C5.89261 14.5166 5.80072 14.5605 5.73353 14.5208C5.66634 14.4812 5.66634 14.383 5.66634 14.1867V12.75Z' fill='%23007AFF'/%3e%3cpath opacity='0.5' d='M3.3481 1.93619C3.56442 1.71804 3.86813 1.57581 4.44165 1.49805C5.03204 1.418 5.81452 1.41675 6.93646 1.41675H10.0629C11.1848 1.41675 11.9673 1.418 12.5577 1.49805C13.1312 1.57581 13.4349 1.71804 13.6513 1.93619C13.8676 2.15433 14.0086 2.46061 14.0857 3.03898C14.1651 3.63435 14.1663 4.42344 14.1663 5.55484L14.1663 12.7501H5.25974C4.49218 12.7501 4.22384 12.7541 4.0182 12.7984C3.65454 12.8765 3.33841 13.0441 3.10792 13.2705C3.03019 13.3468 2.99132 13.385 2.90168 13.6282C2.85026 13.7678 2.83301 13.8612 2.83301 13.9545V5.55484C2.83301 4.42344 2.83425 3.63435 2.91363 3.03898C2.99074 2.46061 3.13178 2.15433 3.3481 1.93619Z' fill='%23007AFF'/%3e%3cpath d='M5.13574 4.95825C5.13574 4.66485 5.37359 4.427 5.66699 4.427H11.3337C11.6271 4.427 11.8649 4.66485 11.8649 4.95825C11.8649 5.25165 11.6271 5.4895 11.3337 5.4895H5.66699C5.37359 5.4895 5.13574 5.25165 5.13574 4.95825Z' fill='%23007AFF'/%3e%3cpath d='M5.66699 6.90617C5.37359 6.90617 5.13574 7.14402 5.13574 7.43742C5.13574 7.73082 5.37359 7.96867 5.66699 7.96867H9.20866C9.50206 7.96867 9.73991 7.73082 9.73991 7.43742C9.73991 7.14402 9.50206 6.90617 9.20866 6.90617H5.66699Z' fill='%23007AFF'/%3e%3c/svg%3e");
+		}
+			
+	}
+	p.line-left:after {
+		content: '-';
+		position: absolute;
+		left: 0;
+		top: -1px;
+		font-size: 16px;
+	}
+}
+
+.vertmenu .subCat {
+	top: 0;
+	right: 0px;
+	position: absolute;
+	cursor: pointer;
+}
+.chka{
+	position: absolute;
+	left: 0;
+	top: 0;
+	
+}
+
+.chka:before {
+	content: '+';
+	font-size: 1rem;
+	color: #1266B1;
+	font-weight: bold;
+	font-family: Courier;
+}
+
+
+.subCat:checked+.chka:before {
+	content: '-';
+}
+
+// .vertmenu a {
+// 	color: #477AB9;
+// 	font-size: 16px;
+// 	font-weight: bold;
+// 	text-decoration: none;
+// }
+
+// .vertmenu ul li li a {
+// 	color: #666;
+// 	font-size: 15px;
+// 	font-weight: normal;
+// 	text-decoration: none;
+// }
+
+// .vertmenu a.active {
+// 	color: #00B1EC;
+// }
+
+// .vertmenu a:hover {
+// 	text-decoration: none;
+// 	color: #000 !important;
+// }
+
+.vertmenu>ul>li ul {
+	display: none;
+}
+
+// .vertmenu>ul>li .active+span+ul {
+// 	display: block !important;
+// }
+
+.vertmenu>ul>li .subCat:checked~ul {
+	display: block !important;
+}
+
+.vertmenu input[type=checkbox].subCat {
+	display: none;
+}
+
+// .vertmenu ul li li a:before {
+// 	content: '\203A';
+// 	font-size: 20px;
+// 	padding-right: 6px;
+// 	color: #666;
+// 	font-weight: bold;
+// }
+
+// .vertmenu>ul li li a:hover:before {
+// 	color: #1266B1;
+// }

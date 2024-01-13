@@ -11,7 +11,36 @@ block content
 	])
 
 	main.support
-		
+		.support-aside
+			.vertmenu
+				ul
+					li
+						p Журналы аудита
+						input#1.subCat(type='checkbox' )
+						label.chka(for='1')
+						ul(style='display:none')
+							li
+								p Системные журналы
+								input.subCat(type='checkbox' id='1.1')
+								label.chka(for='1.1')
+								ul(style='display:none')
+									li
+										p.line-left Безопасность
+									li
+										p.line-left Мандатная подсистема
+									li
+										p.line-left Система
+							li
+								p Пункт меню 1.2
+							li
+								p Пункт меню 1.3
+					li
+						p Прикладные журналы
+						
+					li
+						p Сохранённые журналы
+						
+		.support-content
 
 block variables
 	-var title = "Техподдержка";
