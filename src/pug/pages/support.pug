@@ -31,9 +31,9 @@ block content
 									li
 										p.line-left Система
 							li
-								p Пункт меню 1.2
+								p.line-left Пункт меню 1.2
 							li
-								p Пункт меню 1.3
+								p.line-left Пункт меню 1.3
 					li
 						p Прикладные журналы
 						
@@ -41,6 +41,31 @@ block content
 						p Сохранённые журналы
 						
 		.support-content
+			.support-wrapper
+				.support-table
+					.support-table-row.support-table__header
+						.cell-type  Тип события
+						.cell-date Дата и время
+						.cell-code Код события
+						.cell-level Уровень важности
+						.cell-text Текст события
+
+					.support-table-row
+						.cell-type
+							p Сведение
+						.cell-date
+							p 20.05.23 в 23:20
+						.cell-code
+							p 0x400800001
+						.cell-level
+							p Нормальный
+						.cell-text
+							p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.
+				
+				.support-log
+			.support-info
+
+
 
 block variables
 	-var title = "Техподдержка";
