@@ -1,0 +1,17 @@
+extends ../layouts/layout.pug
+
+block content
+	+header([
+		{name: 'Приборная панель', link: 'dashboard.html'},
+		{name: 'Администраторы', link: 'admins.html'},
+		{name: 'Заказы',link: 'orders.html'},
+		{name: 'Аналитика',link: 'analytics.html'},
+		{name: 'Связь', link: 'connection.html'},
+		{name: 'Техподдержка', link:'support.html', active:'true'}
+	])
+
+	main.support
+		
+
+block variables
+	-var title = "Техподдержка";
