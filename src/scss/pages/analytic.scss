@@ -1,0 +1,51 @@
+@import "../base/var.scss";
+.analytics-grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap:remy(24);
+}
+
+.analytic-reports{
+	display: flex;
+	flex-direction: column;
+	row-gap:remy(12);
+	&>*{width: 100%;}
+	border-radius: remy(20);
+	background: #FFF;
+	box-shadow: 0px 0px 8px 4px rgba(151, 151, 151, 0.10);
+}
+.analytic-reports .scroll-left{
+	padding: remy(8);
+	flex-grow: 1;
+	height: calc(100vh - 14.5rem)
+}
+.analytic-reports__body{padding: remy(8);}
+.analytic-reports__header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: remy(20);
+	padding-bottom: 0;
+
+	.title{margin-bottom: 0;}
+}
+.analytic-reports__group,.analytic-reports__title{
+	display: flex;
+	align-items: center;
+	gap:remy(12);
+}
+.analytic-reports__group{
+	.btn{padding-left: 1rem; padding-right: 1rem;}
+}
+.button-settings{
+	width: remy(37);
+	height: remy(37);
+	border-radius: remy(8);
+	background: #FFF;
+	box-shadow: 0px 0px 8px 4px rgba(151, 151, 151, 0.10);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	svg{color: $accent;}
+		
+}

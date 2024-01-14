@@ -1,7 +1,7 @@
 @import "../base/var.scss";
 .dotter-li{
 	display: flex;
-	column-gap: remy(8);
+	column-gap: remy(4);
 	width: 100%;
 	@media(max-width:remy(574)){
 		flex-wrap:wrap;
@@ -9,10 +9,12 @@
 	}
 	&__text{
 		flex-shrink: 0;
+		letter-spacing: 0.016px;
 	}
 	&__val{
 		color: $accent;
 		flex-shrink:0;
+		letter-spacing: 0.016px;
 	}
 	.dotter-line{
 		flex-grow:1;

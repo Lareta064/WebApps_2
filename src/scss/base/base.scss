@@ -210,7 +210,7 @@ main{
 
 	}
 }
-.scroll-left{direction: rtl}
+.scroll-left{direction: rtl; & *{direction: ltr;}}
 .border-shadow{
 	border-radius: 0.75rem;
 	background: white;

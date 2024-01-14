@@ -1,0 +1,28 @@
+@import "../base/var.scss";
+.report-card{
+	position: relative;
+	border-radius: 1rem;
+	padding: remy(20) remy(14);
+	background: #FFF;
+	box-shadow: 0px 0px 8px 4px rgba(151, 151, 151, 0.10);
+	.dotter-li + .dotter-li{margin-top: remy(8);}
+}
+.report-card +.report-card{margin-top: remy(12);}
+.report-card__title{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap:1rem;
+	margin-bottom: remy(16);
+	.report-card__close{
+		transition: .3s; 
+		margin-left: auto;
+		&:hover{opacity: .6;}
+	}
+	
+}
+.report-card__list{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap:remy(20);
+}

@@ -1,0 +1,72 @@
+extends ../layouts/layout.pug
+mixin report-card
+	.report-card
+		.report-card__title
+			.title-small Отчёт от 25.11.23
+			
+			a(href="#!").dwl-link Эскпортировать
+			
+			button.report-card__close
+				svg.svg-cross
+					use(href="./img/spriteSvg.svg#svg-cross")
+		.report-card__list
+			.dotter-list
+				+dotter-li('В работе:', '12')
+				+dotter-li('Заказы без исполнителя:', '2')
+				+dotter-li('Фактическая прибыль: ','1.200.600₽')
+				+dotter-li('Потенциальная прибыль: ', '2.200.600₽')
+			
+			.dotter-list
+				+dotter-li('Заказов опубликовано: ', '34')
+				+dotter-li('Успешно выполнено: ', '20')
+				+dotter-li('Среднее время заказа: ','3дн. 7ч.')
+				+dotter-li('Производительность:', '20%')
+block content
+	+header([
+		{name: 'Мониторинг', link: 'index.html'},
+		{name: 'Задачи', link: 'tasks-page.html'},
+		{name: 'Платежи',link: 'payments-page.html', active: 'true'},
+		{name: 'Аналитика',link: 'analytics-page.html'},
+		{name: 'Чат', label:'3',link: 'chat-page.html'},
+		{name: 'Исполнители',link:'contractors-page.html'},
+		{name: 'Заказчики',link:'customer.html'}
+	])
+
+	main.analytic.d-flex
+		.container
+			.analytics-grid
+				//======== колонка Отчеты ========
+				.analytic-reports
+					//========== header block ==========
+					.analytic-reports__header
+						
+						.analytic-reports__title
+							.title Отчеты
+							
+							button.button-settings
+								svg.svg-settings
+									use(href="./img/spriteSvg.svg#svg-settings")
+						
+						.analytic-reports__group
+							+custom-drop('Сортировать ', ['Сортировать', 'по возрастанию', 'по убыванию'])(class="drop-filter--sort")
+
+							button.btn(type="button") Сгенерировать отчет
+					.analytic-reports__body
+						.scroll-left
+							.reports-wrapper
+								+report-card
+								+report-card
+								+report-card
+								+report-card
+								+report-card
+								+report-card
+								+report-card
+								+report-card
+							
+				
+				//======== колонка Аналитика ========
+				.analytic-map
+					.title Аналитика
+
+block variables
+	-var title = "Аналитика";
