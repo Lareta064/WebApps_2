@@ -1,6 +1,6 @@
 extends ../layouts/layout.pug
 mixin support-row(type, level)
-	.support-table-row&attributes(attributes)
+	.audit-table-row&attributes(attributes)
 		if type == 'Ошибка'
 			.cell-type.cell-type--wrong
 				p #{type}
@@ -42,17 +42,17 @@ block content
 					span.setting-icon
 					
 			//=======меню=======
-			.vertmenu
+			.audit-menu.level-menu
 				ul
 					li
 						a(href="#!") Журналы аудита
-						input#1.subCat(type='checkbox' checked)
-						label.chka(for='1')
+						input#1.level-cat(type='checkbox' checked)
+						label.level-label(for='1')
 						ul(style='display:none')
 							li
 								a(href="#!") Системные журналы
-								input.subCat(type='checkbox'  id='1.1')
-								label.chka(for='1.1')
+								input.level-cat(type='checkbox'  id='1.1')
+								label.level-label(for='1.1')
 								ul(style='display:none')
 									li
 										a(href="#!") Безопасность
@@ -72,8 +72,8 @@ block content
 						
 		.support-content
 			.support-wrapper
-				.support-table.scroll-right
-					.support-table-row.support-table__header
+				.audit-table.scroll-right
+					.audit-table-row.audit-table__header
 						.cell-type  Тип события
 						.cell-date Дата и время
 						.cell-code Код события
@@ -98,7 +98,7 @@ block content
 					+support-row('Успех', 'Нормальный')
 					+support-row('Ошибка', 'Высокий')
 				
-				.support-meta.border-shadow
+				.audit-report.border-shadow
 					button.cross-icon
 					
 					.dotter-list.border-shadow
@@ -107,9 +107,9 @@ block content
 						+dotter-li('Субъект:','Lorem ipsum dolor.')
 						+dotter-li('Дата и время:', '20.05.23 в 23:20')
 						+dotter-li('Уровень важности:', 'Нормальный')
-					.support-meta__text
+					.audit-report__text
 						p SC: старт службы Lorem ipsum dolor sit провален.
-			.support-info
+			.audit-result
 				p В журнале Система на #[span 02.11.23 14:52:33]  #[span 57] событий, отображено #[span 57] из #[span 57]
 
 

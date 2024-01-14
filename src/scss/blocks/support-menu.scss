@@ -20,34 +20,34 @@
 	padding: remy(4);
 	border-radius: remy(4);
 }
-.vertmenu {
+.level-menu {
 	font-size: 1rem;
 	padding: remy(32) remy(20);
 	
 }
 
-.vertmenu ul {
+.level-menu ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;padding-top: 16px;
 }
 
-.vertmenu ul li {
+.level-menu ul li {
 	position: relative;
 	margin: 0;
 	line-height: 1;
 	margin-bottom: 14px;
 }
 
-.vertmenu ul li>ul{
+.level-menu ul li>ul{
 	padding-left: 11px; 
 	// border-left:1px solid $text;
 }
 
-.vertmenu>ul {
+.level-menu>ul {
 	border: none;
 }
-.vertmenu ul li {
+.level-menu ul li {
 	padding-left:remy(8);
 	position: relative;
 	a{
@@ -68,13 +68,13 @@
 	
 }
 
-.vertmenu .subCat {
+.level-menu .level-cat {
 	top: 0;
 	right: 0px;
 	position: absolute;
 	cursor: pointer;
 }
-.chka{
+.level-label{
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -87,7 +87,7 @@
 	
 }
 
-.chka:before {
+.level-label:before {
 	content: '+';
 	font-size: 1rem;
 	color: #1266B1;
@@ -99,18 +99,18 @@
 }
 
 
-.subCat:checked+.chka:before {
+.level-cat:checked+.level-label:before {
 	content: '-';
 }
 
-.vertmenu>ul>li ul {
+.level-menu>ul>li ul {
 	display: none;
 }
 
-.vertmenu>ul>li .subCat:checked~ul {
+.level-menu>ul>li .level-cat:checked~ul {
 	display: block !important;
 }
 
-.vertmenu input[type=checkbox].subCat {
+.level-menu input[type=checkbox].level-cat {
 	display: none;
 }

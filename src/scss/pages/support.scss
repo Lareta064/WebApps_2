@@ -70,11 +70,11 @@
 	flex-direction: column;
 	&>*{width: 100%;}
 }
-.support-table{
+.audit-table{
 	
 } 
-.support-meta, .support-info{flex-shrink: 0;}
-.support-info{
+.audit-report, .audit-result{flex-shrink: 0;}
+.audit-result{
 	background: #FFF;
 	box-shadow: 0px 0px 8px 4px rgba(151, 151, 151, 0.10);
 	padding: 12px 24px;
@@ -88,10 +88,10 @@
     flex-grow: 1;
 	
 }
-.support-table{
+.audit-table{
 	height: calc(100vh - 350px);
 }
-.support-meta{
+.audit-report{
 	padding: 20px;
 	height: 167px;
 	display: flex;
@@ -105,20 +105,20 @@
 	}
 	.dotter-li__val{color: $text!important;}
 	.dotter-li+.dotter-li{margin-top: 5px;}
-	.support-meta__text{flex-grow:1; padding-top: 8px;}
+	.audit-report__text{flex-grow:1; padding-top: 8px;}
 	@media (max-width: remy(767)) {
 	  height: auto;
 	  flex-direction: column;
 	  align-items: stretch;
 	}
 }
-.support-meta .cross-icon{
+.audit-report .cross-icon{
 	position: absolute;
 	top: 20px;
 	right: 20px;
 	z-index: 2;
 }
-.support-table-row{
+.audit-table-row{
 	display: flex;
 	width: 100%;
 	height: 40px;
@@ -166,22 +166,22 @@
 	.cell-code{width: 100px;} 
 	.cell-level{width: 125px;}
 }
-.support-table-row.active{
+.audit-table-row.active{
 	background-color: #E5F1FF;
 }
-.support-table-row:hover {
+.audit-table-row:hover {
 	background-color: white;
 }
 
 @media (max-width: 1364px) {
-	.support-table-row.support-table__header{display: none;
+	.audit-table-row.audit-table__header{display: none;
 	}
-	.support-table{
+	.audit-table{
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap:24px;
 	}
-	.support-table-row{
+	.audit-table-row{
 		flex-wrap: wrap;
 		height: auto;
 		border-radius: 5px;
@@ -203,16 +203,16 @@
 	}
 }
 @media (max-width: 1199px) {
-	.support-table {grid-template-columns: 1fr 1fr; gap:12px;}
+	.audit-table {grid-template-columns: 1fr 1fr; gap:12px;}
 	.support-wrapper{padding: 20px;}	
 		
 }
 @media (max-width: 991px) {
 	.support-wrapper {padding: 16px;}
-	.support-table {
+	.audit-table {
 		grid-template-columns: 1fr;gap: 0;
 	}
-	.support-table-row{
+	.audit-table-row{
 		box-shadow: none;border: none;
 		border-bottom: 1px solid #E8E8E8;
 		}
