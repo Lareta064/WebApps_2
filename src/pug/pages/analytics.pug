@@ -34,23 +34,20 @@ block content
 
 	main.analytic.d-flex
 		.container
-			.analytics-grid
+			.analytic-grid
 				//======== колонка Отчеты ========
 				.analytic-reports
 					//========== header block ==========
 					.analytic-reports__header
-						
-						.analytic-reports__title
-							.title Отчеты
-							
-							button.button-settings
-								svg.svg-settings
-									use(href="./img/spriteSvg.svg#svg-settings")
-						
-						.analytic-reports__group
-							+custom-drop('Сортировать ', ['Сортировать', 'по возрастанию', 'по убыванию'])(class="drop-filter--sort")
+						.title Отчеты
+						button.button-settings
+							svg.svg-settings
+								use(href="./img/spriteSvg.svg#svg-settings")
+					
+						+custom-drop('Сортировать ', ['Сортировать', 'по возрастанию', 'по убыванию'])(class="drop-filter--sort")
 
-							button.btn(type="button") Сгенерировать отчет
+						button.btn(type="button") Сгенерировать отчет
+					
 					.analytic-reports__body
 						.scroll-left
 							.reports-wrapper
@@ -65,8 +62,8 @@ block content
 							
 				
 				//======== колонка Аналитика ========
-				.analytic-map
-					.title Аналитика
+				//- .analytic-map
+				//- 	.title Аналитика
 
 block variables
 	-var title = "Аналитика";
