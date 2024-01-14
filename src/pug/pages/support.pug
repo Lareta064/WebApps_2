@@ -28,47 +28,52 @@ block content
 	])
 
 	main.support
-		.support-aside
-			//======кнопка показать/скрыть сайдбар на моб версии ======
-			.support-aside__btn
-				.right-icon
-				.cross-icon
+		//======кнопка показать/скрыть сайдбар на моб версии ======
+		button.open-aside(frame-btn="support-aside")  Показать журнал
+		//========== сайдбар с меню ===========
+		.support-aside(frame-modal="support-aside")
+			//=========== кнопка для моб версии - скрывает меню =======
+			button.hide-aside(frame-close)
+				svg.svg-cross
+					use(href="./img/spriteSvg.svg#svg-cross")
 			
-			//========плашка с иконками ======
-			.support-aside__controls
-				button.reload-btn
-					span.reload-icon
-				button.setting-btn
-					span.setting-icon
-					
-			//=======меню=======
-			.audit-menu.level-menu
-				ul
-					li
-						a(href="#!") Журналы аудита
-						input#1.level-cat(type='checkbox' checked)
-						label.level-label(for='1')
-						ul(style='display:none')
-							li
-								a(href="#!") Системные журналы
-								input.level-cat(type='checkbox'  id='1.1')
-								label.level-label(for='1.1')
-								ul(style='display:none')
-									li
-										a(href="#!") Безопасность
-									li
-										a(href="#!") Мандатная подсистема
-									li
-										a(href="#!") Система
-							li
-								a(href="#!") Пункт меню 1.2
-							li
-								a(href="#!") Пункт меню 1.3
-					li
-						a(href="#!") Прикладные журналы
+			//=========== audit-menu =======
+			.audit-menu
+				//========плашка с иконками ======
+				.support-aside__controls
+					button.reload-btn
+						span.reload-icon
+					button.setting-btn
+						span.setting-icon
 						
-					li
-						a(href="#!") Сохранённые журналы
+				//=======меню=======
+				.level-menu
+					ul
+						li
+							a(href="#!") Журналы аудита
+							input#1.level-cat(type='checkbox' checked)
+							label.level-label(for='1')
+							ul(style='display:none')
+								li
+									a(href="#!") Системные журналы
+									input.level-cat(type='checkbox'  id='1.1')
+									label.level-label(for='1.1')
+									ul(style='display:none')
+										li
+											a(href="#!") Безопасность
+										li
+											a(href="#!") Мандатная подсистема
+										li
+											a(href="#!") Система
+								li
+									a(href="#!") Пункт меню 1.2
+								li
+									a(href="#!") Пункт меню 1.3
+						li
+							a(href="#!") Прикладные журналы
+							
+						li
+							a(href="#!") Сохранённые журналы
 						
 		.support-content
 			.support-wrapper
