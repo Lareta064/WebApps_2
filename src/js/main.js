@@ -190,15 +190,9 @@ document.addEventListener("DOMContentLoaded", function (){
 			chatWindow.classList.remove('active');
 		})
 	}
-	// const supportAside = document.querySelector('.support-aside');
-	// if (supportAside){
-	// 	const openAside = document.querySelector('.open-aside')
-	// 	supportAside.querySelector('.support-aside__btn').addEventListener('click', function(){
-			
-	// 		if (supportAside.classList.contains('active')){
-	// 			supportAside.classList.remove('active');
-	// 		}
-	// 		else { supportAside.classList.add('active'); }
-	// 	});
-	// }
+	/************на моб версии скрыть отчеи на стр Техподдержка******************** */
+	const auditReport = document.querySelector('.audit-report');
+	if (document.innerWidth < 768 && auditReport) {
+		auditReport.classList.remove('visible');
+	}
 });
