@@ -21,6 +21,13 @@ mixin report-card
 				+dotter-li('Успешно выполнено: ', '20')
 				+dotter-li('Среднее время заказа: ','3дн. 7ч.')
 				+dotter-li('Производительность:', '20%')
+
+mixin marker-li(num, col)
+	.dotter-li
+		i.list-marker(style="background-color:"+ col)
+		span.dotter-li__text Регион #{num}
+		span.dotter-line
+		span.dotter-li__val  100
 block content
 	+header([
 		{name: 'Мониторинг', link: 'index.html'},
@@ -62,8 +69,27 @@ block content
 							
 				
 				//======== колонка Аналитика ========
-				//- .analytic-map
-				//- 	.title Аналитика
+				.analytic-content.border-shadow
+					.title Аналитика
+					.analytic-map-wrappert.border-shadow
+						.title-small  География заказов
+						.analytic-map
+							img(src="./img/map2.webp", alt="map")
+						
+						.analytic-regions
+							.dotter-list
+								+marker-li(1,'#007AFF')
+								+marker-li(2,'#007AFF')
+								+marker-li(3,'#007AFF')
+								+marker-li(4,'#007AFF')
+							.dotter-list
+								+marker-li(5,'rgba(0, 122, 255, 0.60)')
+								+marker-li(6,'rgba(0, 122, 255, 0.40)')
+								+marker-li(7,'rgba(0, 122, 255, 0.20)')
+								+marker-li(8,'rgba(0, 122, 255, 0.10)')
+
+								
+
 
 block variables
 	-var title = "Аналитика";
