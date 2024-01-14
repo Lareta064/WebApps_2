@@ -1,6 +1,6 @@
 extends ../layouts/layout.pug
-mixin support-row(type, level)
-	.audit-table-row&attributes(attributes)
+mixin support-row(type, level, text = 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.')
+	.audit-table-row.js-group-item(frame-btn="audit-report")&attributes(attributes)
 		if type == 'Ошибка'
 			.cell-type.cell-type--wrong
 				p #{type}
@@ -14,8 +14,7 @@ mixin support-row(type, level)
 		.cell-level
 			p #{level}
 		.cell-text
-			p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.
-
+			p #{text}
 
 block content
 	+header([
@@ -77,7 +76,7 @@ block content
 						
 		.support-content
 			.support-wrapper
-				.audit-table.scroll-right
+				.audit-table.scroll-right.js-group
 					.audit-table-row.audit-table__header
 						.cell-type  Тип события
 						.cell-date Дата и время
@@ -85,8 +84,8 @@ block content
 						.cell-level Уровень важности
 						.cell-text Текст события
 
-					+support-row('Ошибка', 'Нормальный')
-					+support-row('Сведение', 'Нормальный')
+					+support-row('Ошибка', 'Нормальный', 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et. Lorem ipsum dolor ')
+					+support-row('Сведение', 'Нормальный', 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et. Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et.')
 					+support-row('Сведение', 'Нормальный')(class="active")
 					+support-row('Ошибка', 'Высокий')
 					+support-row('Ошибка', 'Высокий')
@@ -103,8 +102,10 @@ block content
 					+support-row('Успех', 'Нормальный')
 					+support-row('Ошибка', 'Высокий')
 				
-				.audit-report.border-shadow
-					button.cross-icon
+				.audit-report.border-shadow.visible(frame-modal="audit-report")
+					button.hide-report(frame-close)
+						svg.svg-cross
+							use(href="./img/spriteSvg.svg#svg-cross")
 					
 					.dotter-list.border-shadow
 						+dotter-li('Код события:', '0x400800001')
