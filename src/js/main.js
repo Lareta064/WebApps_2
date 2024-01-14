@@ -190,9 +190,5 @@ document.addEventListener("DOMContentLoaded", function (){
 			chatWindow.classList.remove('active');
 		})
 	}
-	/************на моб версии скрыть отчеи на стр Техподдержка******************** */
-	const auditReport = document.querySelector('.audit-report');
-	if (document.innerWidth < 768 && auditReport) {
-		auditReport.classList.remove('visible');
-	}
+	
 });
