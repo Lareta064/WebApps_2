@@ -45,30 +45,30 @@ block content
 			.vertmenu
 				ul
 					li
-						p Журналы аудита
+						a(href="#!") Журналы аудита
 						input#1.subCat(type='checkbox' checked)
 						label.chka(for='1')
 						ul(style='display:none')
 							li
-								p Системные журналы
+								a(href="#!") Системные журналы
 								input.subCat(type='checkbox'  id='1.1')
 								label.chka(for='1.1')
 								ul(style='display:none')
 									li
-										p.line-left Безопасность
+										a(href="#!") Безопасность
 									li
-										p.line-left Мандатная подсистема
+										a(href="#!") Мандатная подсистема
 									li
-										p.line-left Система
+										a(href="#!") Система
 							li
-								p.line-left Пункт меню 1.2
+								a(href="#!") Пункт меню 1.2
 							li
-								p.line-left Пункт меню 1.3
+								a(href="#!") Пункт меню 1.3
 					li
-						p Прикладные журналы
+						a(href="#!") Прикладные журналы
 						
 					li
-						p Сохранённые журналы
+						a(href="#!") Сохранённые журналы
 						
 		.support-content
 			.support-wrapper
@@ -99,6 +99,8 @@ block content
 					+support-row('Ошибка', 'Высокий')
 				
 				.support-meta.border-shadow
+					button.cross-icon
+					
 					.dotter-list.border-shadow
 						+dotter-li('Код события:', '0x400800001')
 						+dotter-li('Тип события:', 'Ошибка')

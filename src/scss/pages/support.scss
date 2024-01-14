@@ -96,6 +96,8 @@
 	height: 167px;
 	display: flex;
 	gap:20px;
+	position: relative;
+	
 	.dotter-list{
 		width: 285px;
 		
@@ -109,6 +111,12 @@
 	  flex-direction: column;
 	  align-items: stretch;
 	}
+}
+.support-meta .cross-icon{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 2;
 }
 .support-table-row{
 	display: flex;

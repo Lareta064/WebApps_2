@@ -50,7 +50,7 @@
 .vertmenu ul li {
 	padding-left:remy(8);
 	position: relative;
-	p{
+	a{
 		position: relative;
 		display: flex;
 		align-items: center;
@@ -65,13 +65,7 @@
 		}
 			
 	}
-	p.line-left:after {
-		content: '-';
-		position: absolute;
-		left: 0;
-		top: -1px;
-		font-size: 16px;
-	}
+	
 }
 
 .vertmenu .subCat {
@@ -109,36 +103,9 @@
 	content: '-';
 }
 
-// .vertmenu a {
-// 	color: #477AB9;
-// 	font-size: 16px;
-// 	font-weight: bold;
-// 	text-decoration: none;
-// }
-
-// .vertmenu ul li li a {
-// 	color: #666;
-// 	font-size: 15px;
-// 	font-weight: normal;
-// 	text-decoration: none;
-// }
-
-// .vertmenu a.active {
-// 	color: #00B1EC;
-// }
-
-// .vertmenu a:hover {
-// 	text-decoration: none;
-// 	color: #000 !important;
-// }
-
 .vertmenu>ul>li ul {
 	display: none;
 }
-
-// .vertmenu>ul>li .active+span+ul {
-// 	display: block !important;
-// }
 
 .vertmenu>ul>li .subCat:checked~ul {
 	display: block !important;
@@ -147,15 +114,3 @@
 .vertmenu input[type=checkbox].subCat {
 	display: none;
 }
-
-// .vertmenu ul li li a:before {
-// 	content: '\203A';
-// 	font-size: 20px;
-// 	padding-right: 6px;
-// 	color: #666;
-// 	font-weight: bold;
-// }
-
-// .vertmenu>ul li li a:hover:before {
-// 	color: #1266B1;
-// }
