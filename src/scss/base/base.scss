@@ -153,6 +153,12 @@ main{
 		
 	}
 }
+.container.px-0 {
+	@media (max-width: remy(574)) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
 .back-link__wrapper{
 	padding: remy(14) 0;
 	@media(max-width:remy(767)) {
