@@ -34,7 +34,7 @@ block content
 							
 				.settings-content.grid
 					//======= Рейтинг==========
-					.settings-column.grid__column.active.tabs-inner.tabs-body(tab-body="1")
+					.settings-column.grid__column.active.tabs-body(tab-body="1")
 						
 						//========== Доступно обновление ==========
 						.update-notify.border-shadow
@@ -183,7 +183,7 @@ block content
 					
 					//======= Рабочие процессы ==========
 					.settings-column.grid__column.tabs-body(tab-body="3")
-						
+						//===== Рабочие процессы =======
 						.work-process.border-shadow
 							.title Рабочие процессы
 							.work-process__form
@@ -196,32 +196,89 @@ block content
 									label.label Минимальная сумма заказа
 									input(type="text" placeholder="От: 1000₽" )
 											
-						//====карточка с диаграммой =====
-						.diagram-card.border-shadow
-							.title-small.change-item Количество заказов #[span.txt-accent 104] #[span.change-down -12%] 
-							.filters-group
-								+custom-drop('Неделя', ['Год', 'Месяц', 'Квартал'])(class="drop-filter--small")
+						//===== Черный список =======
 
-							.diagram-card__chart
-								.chart-label
-									p 32 заказа
-									span 04 ноя. - 5 ноя.
+						.black-list.tabs-inner.border-shadow
+							.title Черный список
+							.tabs-menu
+								nav
+									button.tabs-menu__item.active.tabs-inner-btn(tab-btn="contractors") Исполнители
+									button.tabs-menu__item.tabs-inner-btn(tab-btn="admins") Администраторы
+									
+							
+							.scroll-left
+								//=========== Исполнители=================
+								.black-list__block.active.tabs-inner-body(tab-body="contractors")
+									//========= single card =========
+									.id-card
+										.title-small Иванов Иван Иванович
+										.id-card__role Администратор
+										.id-card__flex
+											.id-card__ID ID: #[span  433134]
+											a(href="#").flex-link
+												span Разбанить
+												span.check-icon
+									//========= single card =========
+									.id-card
+										.title-small Иванов Иван Иванович
+										.id-card__role Администратор
+										.id-card__flex
+											.id-card__ID ID: #[span  433134]
+											a(href="#").flex-link
+												span Разбанить
+												span.check-icon
+									//========= single card =========
+									.id-card
+										.title-small Иванов Иван Иванович
+										.id-card__role Администратор
+										.id-card__flex
+											.id-card__ID ID: #[span  433134]
+											a(href="#").flex-link
+												span Разбанить
+												span.check-icon
+								
+								//=========== Администраторы =================
+								.black-list__block.tabs-inner-body(tab-body="admins")
+									//========= single card =========
+									.id-card
+										.title-small Иванов Иван Иванович
+										.id-card__role Администратор
+										.id-card__flex
+											.id-card__ID ID: #[span  433134]
+											a(href="#").flex-link
+												span Разбанить
+												span.check-icon
+							
+									//========= single card =========
+									.id-card
+										.title-small Иванов Иван Иванович
+										.id-card__role Администратор
+										.id-card__flex
+											.id-card__ID ID: #[span  433134]
+											a(href="#").flex-link
+												span Разбанить
+												span.check-icon
 
-								img(src="./img/chart.webp", alt="alt")
-						
-						
-						//====карточка с диаграммой =====
-						.diagram-card.border-shadow
-							.title-small.change-item Прибыль: #[span.txt-accent 1.500.200 ₽] #[span.change-up +12%]
-							.filters-group
-								+custom-drop('Неделя', ['Год', 'Месяц', 'Квартал'])(class="drop-filter--small")
+									//========= single card =========
+									.id-card
+										.title-small Иванов Иван Иванович
+										.id-card__role Администратор
+										.id-card__flex
+											.id-card__ID ID: #[span  433134]
+											a(href="#").flex-link
+												span Разбанить
+												span.check-icon
+							
+									//========= single card =========
+									.id-card
+										.title-small Иванов Иван Иванович
+										.id-card__role Администратор
+										.id-card__flex
+											.id-card__ID ID: #[span  433134]
+											a(href="#").flex-link
+												span Разбанить
+												span.check-icon
 
-							.diagram-card__chart
-								.chart-label
-									p 10034 заказов выполнено
-									span 02 окт. - 2 ноя.
-
-								img(src="./img/chart.webp", alt="alt")
 
 block variables
-	-var title = "Приборная панель";
+	-var title = "Настройки";

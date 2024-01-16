@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function (){
 	if (tabs.length >0){
 		customTab(document.querySelectorAll('.tabs'), '.tabs-btn', '.tabs-body' );
 		customTab(document.querySelectorAll('.tabs-inner'), '.tabs-inner-btn', '.tabs-inner-body');
+		console.log(document.querySelectorAll('.tabs-inner'));
 
 	}
 

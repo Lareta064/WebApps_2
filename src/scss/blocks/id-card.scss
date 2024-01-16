@@ -27,4 +27,10 @@
 		text-overflow: ellipsis;
 		max-width: remy(305);
 	}
+	.id-card__flex{
+		display: flex;
+		justify-content: space-between;
+		gap:remy(12);
+		align-items: center;
+	}
 }

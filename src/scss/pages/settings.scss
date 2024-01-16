@@ -7,6 +7,7 @@
 	display: flex;
 	flex-direction: column;
 	&>*{width: 100%;}
+	background-color: transparent;
 }
 .settings .tabs-menu.tabs-menu--mobile{
 	display: none;
@@ -24,7 +25,7 @@
 	padding-left: remy(10);
 	padding-right: remy(10);
 }
-.notify-tpl .scroll-left{height: 100vh;}
+.notify-tpl .scroll-left{height: calc(100vh - remy(350));}
 .notify-tpl__header{
 	display: flex;
 	align-items: center;
@@ -116,3 +117,7 @@
 }
 .work-process{padding: remy(24) remy(20)}
 .work-process__form>*+*{margin-top: remy(16);}
+
+.black-list__block .id-card {
+	.title-small{margin-bottom: remy(10);}
+}
