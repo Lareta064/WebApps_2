@@ -97,10 +97,15 @@
 	}
 }
 /*****system-settings*****/
+
 .system-settings .title{
 	text-align: left;
 }
 .system-settings  .system-settings__list{margin-top: 0;}
+.system-settings .scroll-right{
+	height: calc(100vh - 13.875rem);
+	
+}
 .system-settings-item{
 	padding-top: 1rem;
 	padding-bottom: 1rem;
@@ -120,4 +125,16 @@
 
 .black-list__block .id-card {
 	.title-small{margin-bottom: remy(10);}
+}
+.black-list .scroll-right{
+	height: calc(100vh - remy(515));
+}
+.system-settings, .black-list {
+	padding-left: remy(10);
+	padding-right: remy(10);
+}
+
+.system-settings .scroll-right , .black-list .scroll-right{
+	padding-left: remy(10);
+	padding-right: remy(10);
 }
