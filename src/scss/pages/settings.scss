@@ -93,4 +93,22 @@
 		color: #000;
 	}
 }
-
+/*****system-settings*****/
+.system-settings .title{
+	text-align: left;
+}
+.system-settings  .system-settings__list{margin-top: 0;}
+.system-settings-item{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	background-color: #fff;
+	border-bottom: 1px solid #EAEAEA;
+	.title-small{margin-bottom: 1rem;}
+	p {	margin-bottom: 1rem;}
+		.system-settings__group{
+			display: flex;
+			flex-direction: column;
+			row-gap:remy(10);
+		}
+		
+}

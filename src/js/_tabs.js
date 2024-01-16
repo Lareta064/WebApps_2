@@ -39,5 +39,4 @@ document.addEventListener("DOMContentLoaded", function () {
 		customTab(document.querySelectorAll('.tabs-inner'), '.tabs-inner-btn', '.tabs-inner-body');
 
 	}
-
 });

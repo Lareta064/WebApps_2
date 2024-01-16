@@ -218,3 +218,14 @@ label.rel-label{position: relative; display: block;}
     background-color: $accent;
   }
 }
+.form-radio,.form-chbx{
+  display: flex;
+  align-items: center;
+  column-gap:remy(8);
+}
+.form-radio input[type="radio"],
+.form-chbx input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}

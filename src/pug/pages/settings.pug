@@ -15,7 +15,7 @@ mixin tpl-card
 			p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis .
 block content
 	+header([
-		{name: 'Приборная панель', link: 'dashboard.html', active:'true'},
+		{name: 'Приборная панель', link: 'dashboard.html'},
 		{name: 'Администраторы', link: 'admins.html'},
 		{name: 'Заказы',link: 'orders.html'},
 		{name: 'Аналитика',link: 'analytics.html'},
@@ -86,34 +86,101 @@ block content
 											
 					
 					//======= КОЛОНКА ЗАКАЗЫ ==========
-					.dashboard-productivity.grid__column.tabs-body(tab-body="2")
-						.title Производительность
-						
-						.productivity-card
-							+circle-progress-big(80)
+					.system-settings.grid__column.tabs-body(tab-body="2")
+						.title Системные настройки
+						.system-settings__list
 							
-							.dotter-list
-								+dotter-li('Заказов опубликовано: ', '34')
-								+dotter-li('Успешно выполнено:', '20')
-								+dotter-li('В работе: ', '12')
-								+dotter-li('Заказы без исполнителя: ', '2')
-								+dotter-li('Фактическая прибыль: ', '1.200.600₽')
-								+dotter-li('Заказы без исполнителя: ', '2')
-								+dotter-li('Потенциальная прибыль:', '2.200.600₽')
-
-						//====карточка с диаграммой =====
-						.diagram-card.border-shadow
-							.title-medium.change-item KPI: #[span.txt-accent 4,9 ] #[span.change-up +12%] 
-							.filters-group
-								+custom-drop('Неделя', ['Год', 'Месяц', 'Квартал'])(class="drop-filter--small")
-
-							.diagram-card__chart
-								.chart-label
-									p 10034 заказов выполнено
-									span 02 окт. - 2 ноя.
-
-								img(src="./img/chart.webp", alt="alt")
-			
+							//===== настройка с переключателем ========
+							.system-settings-item
+								p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices 
+								
+								.system-settings__group
+									label.switch-item.switch-toggle
+										input(type="checkbox" checked)
+										.switch-item__toggle
+											span
+											span
+										span.state-on Вкл
+										span.state-off Выкл
+							
+							//===== настройка с переключателем ========
+							.system-settings-item
+								p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices 
+								
+								.system-settings__group
+									label.switch-item.switch-toggle
+										input(type="checkbox")
+										.switch-item__toggle
+											span
+											span
+										span.state-on Вкл
+										span.state-off Выкл
+							
+							//===== настройка с переключателем ========
+							.system-settings-item
+								p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices 
+								
+								.system-settings__group
+									label.switch-item.switch-toggle
+										input(type="checkbox")
+										.switch-item__toggle
+											span
+											span
+										span.state-on Вкл
+										span.state-off Выкл
+							
+							//===== настройка с радиобаттонами ========
+							.system-settings-item
+								.title-small Lorem ipsum dolor sit amet consectetur adip
+								p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices 
+								
+								.system-settings__group
+									label.form-radio
+										input(type="radio" name="radio_name")
+										span Только важные
+									
+									label.form-radio
+										input(type="radio" name="radio_name")
+										span Все
+									
+									label.form-radio
+										input(type="radio" name="radio_name")
+										span Никакие
+							
+							//===== настройка с чекбоксами ========
+							.system-settings-item
+								.title-small Lorem ipsum dolor sit amet consectetur adip
+								p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices 
+								
+								.system-settings__group
+									label.form-chbx
+										input(type="checkbox" name="chbx_name1")
+										span Только важные
+									
+									label.form-chbx
+										input(type="checkbox" name="chbx_name2")
+										span Все
+									
+									label.form-chbx
+										input(type="checkbox" name="chbx_name3")
+										span Никакие
+							//===== настройка с чекбоксами ========
+							.system-settings-item
+								.title-small Lorem ipsum dolor sit amet consectetur adip
+								p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices 
+								
+								.system-settings__group
+									label.form-chbx
+										input(type="checkbox" name="chbx_name1")
+										span Только важные
+									
+									label.form-chbx
+										input(type="checkbox" name="chbx_name2")
+										span Все
+									
+									label.form-chbx
+										input(type="checkbox" name="chbx_name3")
+										span Никакие					
 					
 					//======= Аналитика ==========
 					.dashboard-analytic.grid__column.tabs-body(tab-body="3")
