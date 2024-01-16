@@ -106,9 +106,35 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap:remy(20);
+	@media (max-width: remy(991)) {
+		grid-template-columns: 1fr;
+		gap:remy(10);
+	}
 }
 .analytic-regions .dotter-li{
 	position: relative;
 	padding-left: remy(12);
 	&+.dotter-li{margin-top: remy(8);}
+}
+.analytic-map-wrapper .title-small{margin-bottom: remy(24);}
+.analytic-map-wrapper .analytic-map {
+	height: remy(263);
+	margin-bottom: remy(24);
+}
+.analityc-diagram-cards{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap:remy(20);
+	margin-top: remy(20);
+	@media (max-width: remy(991)) {
+		grid-template-columns: 1fr
+	}
+}
+.diagram-card__head{
+	display: flex;
+	justify-content: space-between;
+	column-gap:1rem;
+	align-items: center;
+	margin-bottom: 1rem;
+	.drop-filter{width: remy(80);}
 }

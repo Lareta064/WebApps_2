@@ -30,13 +30,12 @@ mixin marker-li(num, col)
 		span.dotter-li__val  100
 block content
 	+header([
-		{name: 'Мониторинг', link: 'index.html'},
-		{name: 'Задачи', link: 'tasks-page.html'},
-		{name: 'Платежи',link: 'payments-page.html', active: 'true'},
-		{name: 'Аналитика',link: 'analytics-page.html'},
-		{name: 'Чат', label:'3',link: 'chat-page.html'},
-		{name: 'Исполнители',link:'contractors-page.html'},
-		{name: 'Заказчики',link:'customer.html'}
+		{name: 'Приборная панель', link: 'dashboard.html'},
+		{name: 'Администраторы', link: 'admins.html'},
+		{name: 'Заказы',link: 'orders.html'},
+		{name: 'Аналитика',link: 'analytics.html'},
+		{name: 'Связь', link: 'connection.html', active:'true'},
+		{name: 'Техподдержка', link:'support.html'}
 	])
 
 	main.analytic.d-flex
@@ -71,7 +70,7 @@ block content
 				//======== колонка Аналитика ========
 				.analytic-content.border-shadow
 					.title Аналитика
-					.analytic-map-wrappert.border-shadow
+					.analytic-map-wrapper.border-shadow
 						.title-small  География заказов
 						.analytic-map
 							img(src="./img/map2.webp", alt="map")
@@ -88,7 +87,37 @@ block content
 								+marker-li(7,'rgba(0, 122, 255, 0.20)')
 								+marker-li(8,'rgba(0, 122, 255, 0.10)')
 
-								
+					//=========== карты с диаграммами ==========
+					.analityc-diagram-cards
+						
+						//====карточка с диаграммой =====
+						.diagram-card.border-shadow
+							.diagram-card__head
+								p Средний чек
+								.filters-group
+								+custom-drop('Год', ['Год', '2021', '2022'])(class="drop-filter--small")
+
+							.diagram-card__chart
+								.chart-label
+									p 32 заказа
+									span 04 ноя. - 5 ноя.
+
+								img(src="./img/chart.webp", alt="alt")
+						
+						
+						//====карточка с диаграммой =====
+						.diagram-card.border-shadow
+							.diagram-card__head
+								p Время выполнения
+								.filters-group
+								+custom-drop('Год', ['Год', '2021', '2022'])(class="drop-filter--small")
+
+							.diagram-card__chart
+								.chart-label
+									p 10034 заказов выполнено
+									span 02 окт. - 2 ноя.
+
+								img(src="./img/chart.webp", alt="alt")
 
 
 block variables
