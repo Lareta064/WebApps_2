@@ -1,5 +1,18 @@
 extends ../layouts/layout.pug
+mixin tpl-card
+	//====== карточка шаблона ======
+	.tpl-card
+		.tpl-card__header
+			.title-small Шаблон 1
+			.txt-grey Тип 1
 
+		.tpl-card__meta
+			span.notify-icon
+			.txt-grey Стандартное уведомление
+			p.next-link  Разослать
+		.tpl-card__body
+			.title-small Lorem ipsum dolor sit amet consectetur.
+			p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis .
 block content
 	+header([
 		{name: 'Приборная панель', link: 'dashboard.html', active:'true'},
@@ -10,164 +23,67 @@ block content
 		{name: 'Техподдержка', link:'support.html'}
 	])
 
-	main.dashboard.d-flex
+	main.settings.d-flex
 		.container.px-0
+			
 			.tabs
 				.tabs-menu.tabs-menu--mobile
 					nav
-						button.tabs-menu__item.active.tabs-btn(tab-btn="1") Заказы
-						button.tabs-menu__item.tabs-btn(tab-btn="2") Производительность
-						button.tabs-menu__item.tabs-btn(tab-btn="3") Аналитика
-				script.
-					const tabs = document.querySelectorAll('.tabs');
-					for(item of tabs){
-						const itemBtns = item.querySelectorAll('.tabs-btn')
-					}
-								
-				.dashboard-content.grid
+						button.tabs-menu__item.active.tabs-btn(tab-btn="1") Уведомления
+						button.tabs-menu__item.tabs-btn(tab-btn="2") Ситемные настройки
+						button.tabs-menu__item.tabs-btn(tab-btn="3") Рабочие процесы
+							
+				.settings-content.grid
 					//======= Рейтинг==========
-					.dashboard-orders.grid__column.active.tabs-inner.tabs-body(tab-body="1")
-						.flex-wrapper
-							.title Заказы
-							a(href="#!").flex-link Перейти в заказы #[span.right-icon]
+					.settings-column.grid__column.active.tabs-inner.tabs-body(tab-body="1")
 						
-						.tabs-menu
-							nav
-								button.tabs-menu__item.active.tabs-inner-btn(tab-btn="current") Текущие
-								button.tabs-menu__item.tabs-inner-btn(tab-btn="paused") Отложенные
-								button.tabs-menu__item.tabs-inner-btn(tab-btn="completed") Завершенные
-						
-						.filters-group
-							+custom-drop('Сначала просроченные', ['Сначала просроченные', 'Сначала старые', 'Сначала новые'])(class="drop-filter--small")
-						
-						.scroll-left
-							//===================== ТЕКУЩИЕ =================
-							.dashboard-orders__list.active.tabs-inner-body(tab-body="current")
-								//======= задача просроченная ==========
-								.order-card.order-overdue
-									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
-									
-									.order-card__overdue
-										p Просрочен 2 дня 17ч. назад
-									.order-card__footer
-										button(type="button").btn Завершить
-										button(type="button").flex-link.flex-link--red
-											span.cross-icon
-											span Отменить
-								
-								//======= задача просроченная ==========
-								.order-card.order-overdue
-									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
-									
-									.order-card__overdue
-										p Просрочен 2 дня 17ч. назад
-									.order-card__footer
-										button(type="button").btn Завершить
-										button(type="button").flex-link.flex-link--red
-											span.cross-icon
-											span Отменить																	
-								//======= задача просроченная ==========
-								.order-card.order-overdue
-									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
-									
-									.order-card__overdue
-										p Просрочен 2 дня 17ч. назад
-									.order-card__footer
-										button(type="button").btn Завершить
-										button(type="button").flex-link.flex-link--red
-											span.cross-icon
-											span Отменить							
-								
-								//======= задача текущая ==========
-								.order-card
-									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
-									.order-card__date
-										p Дата начало: #[span 08.10.23] в #[span 09:00]
-										p Дата окончания: #[span 18.10.23] в #[span 19:00]
-									
-									.order-card__footer
-										button(type="button").btn Завершить
-										button(type="button").flex-link.flex-link--red 
-											span.cross-icon
-											span Отменить
-								
+						//========== Доступно обновление ==========
+						.update-notify.border-shadow
+							.title Доступно обновление (21.11.23)
+							.update-notify__btns
+								button.btn.btn--grey Позже
+								button.btn Обновить
+
+						//==========Уведомления ==========
+						.notify-tpl.border-shadow
+							.notify-tpl__header
+								.title Уведомления
+								a(href="#!").flex-link.add-template #[span +]Добавить шаблон
 							
-							//=============== ОТЛОЖЕННЫЕ ==============================
-							.dashboard-orders__list.tabs-inner-body(tab-body="paused")
-								//======= задача отложенная ==========
-								.order-card
-									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
-									.order-card__date
-										p Дата начало: #[span 08.10.23] в #[span 09:00]
-										p Дата окончания: #[span 18.10.23] в #[span 19:00]
+							//====== скролл-блок с карточками
+							.scroll-left
+								.notify-tpl__list
 									
-									.order-card__footer
-										button(type="button").btn Активировать
-										button(type="button").flex-link.flex-link--red 
-											span.cross-icon
-											span Отменить
-								//======= задача отложенная ==========
-								.order-card
-									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
-									.order-card__date
-										p Дата начало: #[span 08.10.23] в #[span 09:00]
-										p Дата окончания: #[span 18.10.23] в #[span 19:00]
+									//====== block Свои шаблоны ======
+									.notify-tpl__type
+										.title-small Свои шаблоны
+										
+										//====== карточка шаблона ======
+										.tpl-card
+											.tpl-card__header
+												.title-small Свой шаблон
+												.txt-grey Уведомление о доступном заказе
 									
-									.order-card__footer
-										button(type="button").btn Активировать
-										button(type="button").flex-link.flex-link--red 
-											span.cross-icon
-											span Отменить
-								//======= задача отложенная ==========
-								.order-card
-									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
-									.order-card__date
-										p Дата начало: #[span 08.10.23] в #[span 09:00]
-										p Дата окончания: #[span 18.10.23] в #[span 19:00]
-									
-									.order-card__footer
-										button(type="button").btn Активировать
-										button(type="button").flex-link.flex-link--red 
-											span.cross-icon
-											span Отменить
+											.tpl-card__meta
+												span.reload-icon
+												p.txt-grey Цикличное уведомление, раз в день в 12:56
+											.tpl-card__body
+												.title-small Lorem ipsum dolor sit amet consectetur.
 
-
-							
-							//=============== ЗАВЕРШЕННЫЕ ==========================
-							.dashboard-orders__list.tabs-inner-body(tab-body="completed")
-
-								//======= завершенный заказ=======
-								.order-card.order-complete
-									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
-									.order-card__complete
-										p Завершён 12.08.23, выполнен за 3 дн. 14 ч., прибыль 12.000₽
+												p Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis .
 									
-									.order-card__footer
-										button(type="button").flex-link
-											span Подробнее
-											span.right-icon
-								
-								//======= завершенный заказ=======
-								.order-card.order-complete
-									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
-									.order-card__complete
-										p Завершён 12.08.23, выполнен за 3 дн. 14 ч., прибыль 12.000₽
-									
-									.order-card__footer
-										button(type="button").flex-link
-											span Подробнее
-											span.right-icon
-								
-								//======= завершенный заказ=======
-								.order-card.order-complete
-									.title-small Название задачи, которе может переноситья на следующую строку, а потом и на ещё 1
-									.order-card__complete
-										p Завершён 12.08.23, выполнен за 3 дн. 14 ч., прибыль 12.000₽
-									
-									.order-card__footer
-										button(type="button").flex-link
-											span Подробнее
-											span.right-icon
+									//====== block Свои шаблоны ======
+									.notify-tpl__type
+										.title-small Стандартные шаблоны
+										
+										//====== карточка шаблона ======
+										+tpl-card
+										+tpl-card
+										+tpl-card
+										+tpl-card
+										+tpl-card
+										+tpl-card
+											
 					
 					//======= КОЛОНКА ЗАКАЗЫ ==========
 					.dashboard-productivity.grid__column.tabs-body(tab-body="2")

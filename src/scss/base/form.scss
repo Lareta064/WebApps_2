@@ -143,3 +143,78 @@ input.hide-input{
   width: 0.01rem;
 }
 label.rel-label{position: relative; display: block;}
+
+.switch-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  column-gap: remy(12);
+  height: remy(20);
+  white-space: nowrap;
+  cursor: pointer;
+
+  input {
+    width: 0.01px;
+    height: 0.01px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .switch-item__toggle {
+    position: relative;
+    height: remy(27);
+    
+  }
+
+  span {
+    display: inline-block;
+  }
+
+  p {
+    color: $text;
+    letter-spacing: 0.016px;
+    
+    font-size: 1rem;
+
+    @media (max-width: 767px) {
+      font-size: remy(14);
+    }
+  }
+
+  .switch-item__toggle span:first-child {
+    width: remy(51);
+    height: remy(27);
+    background-color: #DEDEDE;
+    border-radius: remy(32);
+
+
+  }
+  .state-on{display: none;}
+  .state-off {display: block; }
+      
+   
+  .switch-item__toggle span+span {
+    width: remy(22);
+    height: remy(22);
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    transition: .3s;
+  }
+  input:checked+.switch-item__toggle>span+span {
+    left: remy(26);
+    z-index: 2;
+    background-color: white;
+  }
+ input:checked ~ .state-on{ display: block;}
+ input:checked~.state-off {  display: none;}
+ 
+  input:checked+.switch-item__toggle>span {
+    background-color: $accent;
+  }
+}

@@ -88,6 +88,32 @@
 		}
 	}
 }
+
+.next-link {
+	position: relative;
+	transition: .3s;
+	color: $accent;
+	column-gap: 4px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	&:after {
+		content: '';
+		width: remy(19);
+		height: remy(19);
+		background-size: auto;
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3e%3cpath d='M5.25 2.91675L8.75 7.00008L5.25 11.0834' stroke='%23007AFF' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+	}
+
+	&:hover {
+		color: $text;
+
+		&:after {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3e%3cpath d='M5.25 2.91675L8.75 7.00008L5.25 11.0834' stroke='%23333333' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+		}
+	}
+}
 .text-center {
 	text-align: center;
 }

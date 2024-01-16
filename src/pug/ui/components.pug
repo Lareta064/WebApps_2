@@ -24,6 +24,15 @@ html(lang="ru")
 				.container-dashboard__content
 					ul.ui-components
 						li
+							label.switch-item.switch-toggle
+								input(type="checkbox")
+								.switch-item__toggle
+									span
+									span
+								span.state-on Вкл
+								span.state-off Выкл
+						
+						li
 							.filters-group
 								+search-block('', '','','', 'Поиск...')
 				

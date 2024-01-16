@@ -18,6 +18,16 @@
 	svg{color: inherit;}
 
 }
+.btn.btn--grey{
+	background-color: #F0F0F0;
+	border-color:#F0F0F0;
+	color: $text;
+	&:hover{
+		background-color: darken(#F0F0F0, 10%);
+		border-color: darken(#F0F0F0, 10%);
+		color: black;
+	}
+}
 .btn.btn--slim{
 	height:remy(40);
 	padding: 0 remy(24);

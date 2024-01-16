@@ -22,6 +22,8 @@
 		font-size: remy(20);
 		color:$txtGrey;
 		transition: .3s;
+		text-align: center;
+		line-height: remy(24);
 	}
    .pag-btn + .pag-btn{margin-left: 0.5rem;}
    .pag-btn + .pag-next{margin-left: 1rem;}
