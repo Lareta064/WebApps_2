@@ -21,16 +21,15 @@ block content
 		{name: 'Аналитика',link: 'analytics.html'},
 		{name: 'Связь', link: 'connection.html'},
 		{name: 'Техподдержка', link:'support.html'}
-	])
+	], 'active')
 
 	main.settings.d-flex
 		.container.px-0
-			
 			.tabs
 				.tabs-menu.tabs-menu--mobile
 					nav
 						button.tabs-menu__item.active.tabs-btn(tab-btn="1") Уведомления
-						button.tabs-menu__item.tabs-btn(tab-btn="2") Ситемные настройки
+						button.tabs-menu__item.tabs-btn(tab-btn="2") Системные настройки
 						button.tabs-menu__item.tabs-btn(tab-btn="3") Рабочие процесы
 							
 				.settings-content.grid
@@ -85,7 +84,7 @@ block content
 										+tpl-card
 											
 					
-					//======= КОЛОНКА ЗАКАЗЫ ==========
+					//======= Системные настройки  ==========
 					.system-settings.grid__column.tabs-body(tab-body="2")
 						.title Системные настройки
 						.system-settings__list
@@ -182,10 +181,20 @@ block content
 										input(type="checkbox" name="chbx_name3")
 										span Никакие					
 					
-					//======= Аналитика ==========
-					.dashboard-analytic.grid__column.tabs-body(tab-body="3")
-						.title Аналитика
-						+custom-drop('Саратовская обл.', ['Саратовская обл.', 'Самарская обл.', 'Волгоградская обл.','Московская обл'])(class="drop-filter--small")
+					//======= Рабочие процессы ==========
+					.settings-column.grid__column.tabs-body(tab-body="3")
+						
+						.work-process.border-shadow
+							.title Рабочие процессы
+							.work-process__form
+								.form-item
+									label.label Границы срока заказов
+									.form-item__row
+										input(type="text" placeholder="От: 1 дня" )
+										input(type="text" placeholder="До: 60 дней" )
+								.form-item
+									label.label Минимальная сумма заказа
+									input(type="text" placeholder="От: 1000₽" )
 											
 						//====карточка с диаграммой =====
 						.diagram-card.border-shadow

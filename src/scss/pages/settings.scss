@@ -1,4 +1,5 @@
 @import "../base/var.scss";
+.btn-settings.active svg{color: $accent;}
 .settings-column.grid__column{
 	box-shadow: none;
 	border-radius: 0;
@@ -10,33 +11,34 @@
 .settings .tabs-menu.tabs-menu--mobile{
 	display: none;
 }
+.update-notify{padding-top: remy(24);}
 .update-notify__btns{
 	display: flex;
 	align-items: center;
 	gap:remy(8);
-	margin-left: remy(8);
-	margin-right: remy(8);
+	margin-left: remy(10);
+	margin-right: remy(10);
 }
 .notify-tpl{
 	flex-grow:1;
-	padding-left: remy(8);
-	padding-right: remy(8);
+	padding-left: remy(10);
+	padding-right: remy(10);
 }
 .notify-tpl .scroll-left{height: 100vh;}
 .notify-tpl__header{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-left: remy(8);
-	padding-right: remy(8);
+	padding-left: remy(10);
+	padding-right: remy(10);
 	&>*{margin-bottom: 0;}
 	margin-bottom: remy(24);
 }
 
 .add-template span{font-size: remy(28); line-height: remy(22);}
 .notify-tpl__list{
-	margin-left: 8px;
-	margin-right: 8px;
+	margin-left: remy(10);
+	margin-right: remy(10);
 }
 .notify-tpl__type{
 	padding-bottom: remy(8);
@@ -112,3 +114,5 @@
 		}
 		
 }
+.work-process{padding: remy(24) remy(20)}
+.work-process__form>*+*{margin-top: remy(16);}

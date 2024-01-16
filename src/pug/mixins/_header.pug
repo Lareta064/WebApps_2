@@ -12,10 +12,9 @@ mixin header(arg, addCl)
 				.header__buttons
 					//======= notification icon =====
 					if addCl
-						a(href="notifications.html").btn-notify.active
-							span.label-num 3
-							svg.svg-notify
-								use(href="./img/spriteSvg.svg#svg-notify")
+						a(href="settings.html").btn-settings.active
+							svg.svg-settings
+								use(href="./img/spriteSvg.svg#svg-settings")
 					else
 						a(href="settings.html").btn-settings
 							svg.svg-settings
