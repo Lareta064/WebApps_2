@@ -14,7 +14,7 @@
 .analytic-grid{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	column-gap:remy(24);
+	gap:remy(24);
 	@media (max-width: remy(1199)) {
 	grid-template-columns: 1fr;
 	}
