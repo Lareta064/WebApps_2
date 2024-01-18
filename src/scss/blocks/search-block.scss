@@ -12,6 +12,7 @@
 .search-block {
 	input {
 		padding-right: remy(50);
+		cursor: default!important;
 	}
 
 	.search-btn {
@@ -33,6 +34,7 @@
 	}
 	.custom-drop__val{
 		box-shadow: none;
+		cursor: default;
 	}
 	@media(min-width:remy(1200)) {
 		max-width: remy(560);

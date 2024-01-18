@@ -86,3 +86,10 @@
 		width: 100%;
 	}
 }
+.drop-filter.custom-drop--relative .custom-drop__list{
+	position: relative;
+	top:auto;
+	left: auto;
+	right: auto;
+	ul{max-height: remy(125);}
+}

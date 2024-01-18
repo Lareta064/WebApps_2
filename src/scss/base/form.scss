@@ -222,6 +222,7 @@ label.rel-label{position: relative; display: block;}
   display: flex;
   align-items: center;
   column-gap:remy(8);
+  cursor:pointer;
 }
 .form-radio input[type="radio"],
 .form-chbx input[type="checkbox"] {

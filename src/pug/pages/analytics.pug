@@ -33,8 +33,8 @@ block content
 		{name: 'Приборная панель', link: 'dashboard.html'},
 		{name: 'Администраторы', link: 'admins.html'},
 		{name: 'Заказы',link: 'orders.html'},
-		{name: 'Аналитика',link: 'analytics.html'},
-		{name: 'Связь', link: 'connection.html', active:'true'},
+		{name: 'Аналитика',link: 'analytics.html', active:'true'},
+		{name: 'Связь', link: 'connection.html'},
 		{name: 'Техподдержка', link:'support.html'}
 	])
 
@@ -46,7 +46,7 @@ block content
 					//========== header block ==========
 					.analytic-reports__header
 						.title Отчеты
-						button.button-settings
+						button.button-settings(frame-btn="report-options")
 							svg.svg-settings
 								use(href="./img/spriteSvg.svg#svg-settings")
 					
@@ -55,7 +55,7 @@ block content
 						button.btn(type="button") Сгенерировать отчет
 					
 					.analytic-reports__body
-						.scroll-left
+						.scroll-left#dinamyc-height
 							.reports-wrapper
 								+report-card
 								+report-card
@@ -71,54 +71,70 @@ block content
 				.analytic-content.border-shadow
 					.title Аналитика
 					.analytic-map-wrapper.border-shadow
-						.title-small  География заказов
-						.analytic-map
-							img(src="./img/map2.webp", alt="map")
-						
-						.analytic-regions
-							.dotter-list
-								+marker-li(1,'#007AFF')
-								+marker-li(2,'#007AFF')
-								+marker-li(3,'#007AFF')
-								+marker-li(4,'#007AFF')
-							.dotter-list
-								+marker-li(5,'rgba(0, 122, 255, 0.60)')
-								+marker-li(6,'rgba(0, 122, 255, 0.40)')
-								+marker-li(7,'rgba(0, 122, 255, 0.20)')
-								+marker-li(8,'rgba(0, 122, 255, 0.10)')
+						.scroll-right
+							.title-small  География заказов
+							.analytic-map
+								img(src="./img/map2.webp", alt="map")
+							
+							.analytic-regions
+								.dotter-list
+									+marker-li(1,'#007AFF')
+									+marker-li(2,'#007AFF')
+									+marker-li(3,'#007AFF')
+									+marker-li(4,'#007AFF')
+								.dotter-list
+									+marker-li(5,'rgba(0, 122, 255, 0.60)')
+									+marker-li(6,'rgba(0, 122, 255, 0.40)')
+									+marker-li(7,'rgba(0, 122, 255, 0.20)')
+									+marker-li(8,'rgba(0, 122, 255, 0.10)')
 
-					//=========== карты с диаграммами ==========
-					.analityc-diagram-cards
-						
-						//====карточка с диаграммой =====
-						.diagram-card.border-shadow
-							.diagram-card__head
-								p Средний чек
-								.filters-group
-								+custom-drop('Год', ['Год', '2021', '2022'])(class="drop-filter--small")
+							//=========== карты с диаграммами ==========
+							.analityc-diagram-cards
+								
+								//====карточка с диаграммой =====
+								.diagram-card.border-shadow
+									.diagram-card__head
+										p Средний чек
+										.filters-group
+										+custom-drop('Год', ['Год', '2021', '2022'])(class="drop-filter--small")
 
-							.diagram-card__chart
-								.chart-label
-									p 32 заказа
-									span 04 ноя. - 5 ноя.
+									.diagram-card__chart
+										.chart-label
+											p 32 заказа
+											span 04 ноя. - 5 ноя.
 
-								img(src="./img/chart.webp", alt="alt")
-						
-						
-						//====карточка с диаграммой =====
-						.diagram-card.border-shadow
-							.diagram-card__head
-								p Время выполнения
-								.filters-group
-								+custom-drop('Год', ['Год', '2021', '2022'])(class="drop-filter--small")
+										img(src="./img/chart.webp", alt="alt")
+								
+								
+								//====карточка с диаграммой =====
+								.diagram-card.border-shadow
+									.diagram-card__head
+										p Время выполнения
+										.filters-group
+										+custom-drop('Год', ['Год', '2021', '2022'])(class="drop-filter--small")
 
-							.diagram-card__chart
-								.chart-label
-									p 10034 заказов выполнено
-									span 02 окт. - 2 ноя.
+									.diagram-card__chart
+										.chart-label
+											p 10034 заказов выполнено
+											span 02 окт. - 2 ноя.
 
-								img(src="./img/chart.webp", alt="alt")
+										img(src="./img/chart.webp", alt="alt")
 
+
+	//========== PopUp  НАСТРОИТЬ ОТЧЕТ ==============
+	.modal-frame-wrapper.report-options.visible(frame-modal="report-options")
+		.modal-frame.modal-frame--small
+			.modal-header__flex
+				.head Настроить автоотчёт
+				.icon-close(frame-close)
+			
+			.modal-frame__body
+				form.report-options-form(action="")
+					.form-item__row
+						+custom-drop('Раз в день', ['Раз в день', 'Раз в неделю','Раз в месяц'])(class="custom-drop--relative")
+						.form-item
+							input(type="text" placeholder="В 12:00" name="report_time")
+	
 
 block variables
 	-var title = "Аналитика";

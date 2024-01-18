@@ -40,7 +40,7 @@ block content
 							.title Доступно обновление (21.11.23)
 							.update-notify__btns
 								button.btn.btn--grey Позже
-								button.btn Обновить
+								button.btn(frame-btn="check-updates") Обновить
 
 						//==========Уведомления ==========
 						.notify-tpl.border-shadow
@@ -279,5 +279,22 @@ block content
 												span.check-icon
 
 
+	//========== PopUp  ПРОВЕРИТЬ ОБНОВЛЕНИЯ ==============
+	.modal-frame-wrapper.check-updates.visible(frame-modal="check-updates")
+		.modal-frame.modal-frame--small
+			.modal-header__flex
+				.head Система
+				a(href="#!").flex-link.check-updates-link
+					svg.svg-reload
+						use(href="./img/spriteSvg.svg#svg-reload")
+					span Проверить обновления
+				
+				.icon-close(frame-close)
+			
+			.modal-frame__body
+				.check-updates-content
+					.icon-check__img
+						span.check-icon
+					p Установлена актуальная версия ПО, последняя проверка 28.11.23 
 block variables
 	-var title = "Настройки";

@@ -169,6 +169,12 @@
 	align-items: center;
 	column-gap:remy(8);
 	color: $accent;
+	svg{color: $accent;}
+	&:hover{
+		svg {
+				color: $text;
+			}
+	}
 }
 .flex-link.flex-link--red{
 	color: $red;

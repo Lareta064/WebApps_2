@@ -6,6 +6,9 @@
 .dashboard-orders{
 	.tabs-menu__item{
 		min-width: remy(120);
+		@media (max-width: remy(767)) {
+			min-width: unset;
+		}
 	}
 	.drop-filter,.custom-drop{width: 100%;}
 }

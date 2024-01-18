@@ -54,8 +54,6 @@ document.addEventListener("DOMContentLoaded", function (){
 	if (tabs.length >0){
 		customTab(document.querySelectorAll('.tabs'), '.tabs-btn', '.tabs-body' );
 		customTab(document.querySelectorAll('.tabs-inner'), '.tabs-inner-btn', '.tabs-inner-body');
-		console.log(document.querySelectorAll('.tabs-inner'));
-
 	}
 
 	/*===================DROP FILTER====================*/
@@ -136,14 +134,16 @@ document.addEventListener("DOMContentLoaded", function (){
 	//======for audit table  ========
 	const itemsGroup = document.querySelectorAll('.js-group');
 	if (itemsGroup.length > 0) {
-		for (let item of itemsGroup) {
-			const itemsGroupChilds = item.querySelectorAll('.js-group-item');
-			item.addEventListener('click', function (e) {
-				for (let el of itemsGroupChilds) {
-					el.classList.remove('active');
-				}
-				e.target.classList.add('active');
-			});
+		for (let group of itemsGroup) {
+			const groupChilds = group.querySelectorAll('.js-group-item');
+			for (let child of groupChilds) {
+
+				child.addEventListener('click', ()=> {
+					const activeChild = group.querySelector('.js-group-item.active');
+					activeChild?.classList.remove('active');
+					child.classList.add('active');
+				});
+			}
 		}
 	}
     /*==========линия прогресса закарасить на определенный процент======*/
